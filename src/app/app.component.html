@@ -1,3 +1,4 @@
+
 <html>
   <head class="main">
     <title>Promasidor Kenya Limited</title>
@@ -10,13 +11,25 @@
     <!-- I will create a navigation bar right here-->
     <div class="navigation">
       <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">FAQ</a>
+        <ul>
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="./aboutpage">About</a></li>
+          <li><a routerLink="/customerspage">customers</a></li>
+          <li><a routerLink="/delivery-informationpage">delivery-information</a></li>
+          <li><a routerLink="/employees-page">employees</a></li>
+          <li><a routerLink="/order-informationpage">order-information</a></li>
+          <li><a routerLink="/productpage">product</a></li>
+          <li><a routerLink="/statuspage">status</a></li>
+          <li><a routerLink="/stockpage">stock</a></li>
+          <li><a routerLink="/suppliers-informationpage">suppliers-information</a></li>
+          <li><a routerLink="/supplierspage">suppliers</a></li>
+          <!-- Add more links for other pages if needed -->
+        </ul>
       </nav>
     </div>
     
     <h1>Welcome to my Webpage</h1>
   
   </body>
+  <router-outlet></router-outlet>
 </html>
