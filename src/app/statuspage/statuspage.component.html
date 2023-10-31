@@ -1,1 +1,18 @@
 <p>statuspage works!</p>
+
+<div>
+    <table class="table">
+      <tr class="tr">
+        <th>Status ID</th>
+        <th>Status Name</th>
+      </tr>
+      <tr class="tr" *ngFor="let Status of statuslist ">
+          <!--Rememeber to check with the previous one -->
+        <td>{{Status.StatusID}}</td>
+        <td>{{Status.StatusName}}</td>
+
+        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+      </tr>
+      <tr class="tr"></tr>
+    </table>
+  </div>

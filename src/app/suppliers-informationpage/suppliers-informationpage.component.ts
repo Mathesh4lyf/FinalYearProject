@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { SuppliersInformation } from './suppliers-information';
+import { CustomersService } from '../customers.service';
 
 @Component({
   selector: 'app-suppliers-informationpage',
@@ -6,5 +10,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./suppliers-informationpage.component.css']
 })
 export class SuppliersInformationpageComponent {
+
+  public isUpdate=false;
+  public suppliers: SuppliersInformation;
+  public supplierslist:SuppliersInformation[] | undefined;
+  constructor( private customersService: CustomersService){
+    this.suppliers=new SuppliersInformation();
+  }
 
 }

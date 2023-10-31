@@ -1,1 +1,20 @@
 <p>stockpage works!</p>
+<div>
+    <table class="table">
+      <tr class="tr">
+        <th>ProductID</th>
+        <th>ProductName</th>
+        <th>QuantityAvailable </th>
+        <th>Product Type</th>
+      </tr>
+      <tr class="tr" *ngFor="let Stock of stocklist">
+          <!--Rememeber to check with the previous one -->
+        <td>{{Stock.ProductID}}</td>
+        <td>{{Stock.ProductName}}</td>
+        <td>{{Stock.QuantityAvailable}}</td>
+        <td>{{Stock.ProductType}}</td>
+        <!--<td><button class="btn" (click)="editStock(stocks)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+      </tr>
+      <tr class="tr"></tr>
+    </table>
+  </div>

@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'Product', component: ProductpageComponent }, // Product route
   { path: 'Status ', component: StatuspageComponent }, // Status route
   { path: 'Stock', component: StockpageComponent }, // Stock route
-  { path: 'SupplierInformation', component: SuppliersInformationpageComponent }, // SupplierInformation route
+  { path: 'suppliers-informationpage', component: SuppliersInformationpageComponent }, // suppliers-informationpage route
   { path: 'Supplier', component: SupplierspageComponent}, // Supplier route
   // Other routes go here
 ];

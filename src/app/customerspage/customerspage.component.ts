@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CustomersService } from '../customers.service';
+import { Customers } from './customers';
 
 @Component({
   selector: 'app-customerspage',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class CustomerspageComponent {
 
+  public isUpdate=false;
+  public Customerspage: Customers;
+  public Customerslist:Customers[] | undefined;
+  constructor( private customersService: CustomersService){
+    this.Customerspage=new Customers();
+  }
 }

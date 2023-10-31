@@ -1,1 +1,32 @@
 <p>employees-page works!</p>
+
+<div>
+    <table class="table">
+      <tr class="tr">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Role</th>
+        <th>Employee ID</th>
+      </tr>
+      <tr class="tr" *ngFor="let Employees of  Employeeslist ">
+          <!--Rememeber to check with the previous one -->
+        <td>{{Employees.FirstName}}</td>
+        <td>{{Employees.LastName}}</td>
+        <td>{{Employees.DateofBirth}}</td>
+        <td>{{Employees.PhoneNumber}}</td>
+        <td>{{Employees.EmailAddress}}</td>
+        <td>{{Employees.UserName}}</td>
+        <td>{{Employees.Password}}</td>
+        <td>{{Employees.Role}}</td>
+        <td>{{Employees.EmployeeID}}</td>
+
+        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+      </tr>
+      <tr class="tr"></tr>
+    </table>
+  </div>

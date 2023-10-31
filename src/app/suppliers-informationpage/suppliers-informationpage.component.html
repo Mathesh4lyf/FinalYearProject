@@ -1,1 +1,57 @@
-<p>suppliers-informationpage works!</p>
+<body>
+    <!--<form class="collect" #suppliersdata="ngForm" (ngSubmit)="onSubmit(suppliersdata)">
+      <div class="data">
+        <input type="hidden"  ngModel="{{suppliers.SupplierID}}"  name="SupplierID"  class="form-control form-control-lg" />
+        <input type="text" ngModel="{{suppliers.SupplierName}}" name="supplierName" class="form-control form-control-lg" />
+        <label class="label" for="supplierName">Suppliers Name</label>
+      </div>
+      <div class="data">
+        <input type="int" ngModel="{{suppliers.ProductID}}" name="productID" class="form-control form-control-lg" />
+        <label class="label" for="productID">ProductID</label>
+      </div>
+      <div class="data">
+        <input type="int" ngModel="{{suppliers.Email}}" name="email" class="form-control form-control-lg" />
+        <label class="label" for="email">Email</label>
+      </div>
+      <div class="data">
+        <input type="int" ngModel="{{suppliers.PhoneNo}}" name="phoneNo" class="form-control form-control-lg" />
+        <label class="label" for="phoneNo">Phone No</label>
+      </div>
+      <div class="data">
+        <input type="int" ngModel="{{suppliers.Address}}" name="address" class="form-control form-control-lg" />
+        <label class="label" for="address">Address</label>
+      </div>
+      <button class="btn" type="Add">Add</button>
+    </form> -->
+    <div>
+      <table class="table">
+        <tr class="tr">
+          <th>Receival ID</th>>
+          <th>Suppliers ID</th>
+          <th>Suppliers Name</th>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Amount Paid</th>
+          <th>Receivedby</th>
+          <th>Status</th>
+          <th>DateofReceival</th>
+        </tr>
+        <tr class="tr" *ngFor="let SuppliersInformation of supplierslist">
+            <!--Rememeber to check with the previous one -->
+          <td>{{SuppliersInformation.ReceivalID}}</td>
+          <td>{{SuppliersInformation.SupplierID}}</td>
+          <td>{{SuppliersInformation.SupplierName}}</td>
+          <td>{{SuppliersInformation.ProductID}}</td>
+          <td>{{SuppliersInformation.ProductName}}</td>
+          <td>{{SuppliersInformation.Quantity}}</td>
+          <td>{{SuppliersInformation.AmountPaid}}</td>
+          <td>{{SuppliersInformation.Receivedby}}</td>
+          <td>{{SuppliersInformation.Status}}</td>
+          <td>{{SuppliersInformation.DateofReceival}}</td>
+          <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        </tr>
+        <tr class="tr"></tr>
+      </table>
+    </div>
+  </body>

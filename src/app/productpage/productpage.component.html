@@ -1,1 +1,22 @@
 <p>productpage works!</p>
+
+<div>
+    <table class="table">
+      <tr class="tr">
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Type</th>
+        <th>Product Description</th>
+      </tr>
+      <tr class="tr" *ngFor="let Product of productlist">
+          <!--Rememeber to check with the previous one -->
+        <td>{{Product.ProductID}}</td>
+        <td>{{Product.ProductName}}</td>
+        <td>{{Product.ProductType}}</td>
+        <td>{{Product.ProductDescription}}</td>
+
+        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+      </tr>
+      <tr class="tr"></tr>
+    </table>
+  </div>
