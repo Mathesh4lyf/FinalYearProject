@@ -1,0 +1,47 @@
+<div class="auth-container">
+    <div *ngIf="currentForm === 'login'; else registerForm">
+      <h2>Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="onLoginFormSubmit()">
+        <!-- Your login form fields go here -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="userData.username" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+          </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a (click)="switchForm('register')">Register</a></p>
+    </div>
+  
+    <ng-template #registerForm>
+      <h2>Register</h2>
+      <form #registerFormRef="ngForm" (ngSubmit)="onRegisterFormSubmit()">
+        <!-- Your register form fields go here -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="userData.username" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="userData.confirmPassword" required>
+          </div>
+        <button type="submit">Register</button>
+      </form> 
+      <p>Already have an account? <a (click)="switchForm('login')">Login</a></p>
+    </ng-template>
+  </div>
