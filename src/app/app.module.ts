@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import {AuthenticationComponent} from './authentication/authentication.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ProductpageComponent } from './productpage/productpage.component';
@@ -14,12 +15,14 @@ import { OrderInformationpageComponent } from './order-informationpage/order-inf
 import { SupplierspageComponent } from './supplierspage/supplierspage.component';
 import { SuppliersInformationpageComponent } from './suppliers-informationpage/suppliers-informationpage.component';
 import { StockpageComponent } from './stockpage/stockpage.component';
-import { StatuspageComponent } from './statuspage/statuspage.component'
+import { StatuspageComponent } from './statuspage/statuspage.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AuthenticationComponent,
     HomepageComponent,
     AboutpageComponent,
     ProductpageComponent,
@@ -31,10 +34,12 @@ import { StatuspageComponent } from './statuspage/statuspage.component'
     SuppliersInformationpageComponent,
     StockpageComponent,
     StatuspageComponent,
+    // AuthenticatorAssertionResponse,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

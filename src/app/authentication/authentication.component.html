@@ -1,16 +1,17 @@
 <div class="auth-container">
     <div *ngIf="currentForm === 'login'; else registerForm">
       <h2>Login</h2>
-      <form #loginForm="ngForm" (ngSubmit)="onLoginFormSubmit()">
-        <!-- Your login form fields go here -->
+      <form #loginForm="ngForm" id="loginForm" (ngSubmit)="onLoginFormSubmit()">
+        
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" [(ngModel)]="userData.username" required>
+            <label for="username"l>Username</label>
+            <!-- Your login form fields go here  -->
+            <input type="text" id="username" name="username" [(ngModel)]="loginFormData.username" required>
           </div>
           
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+            <input type="password" id="password" name="password" [(ngModel)]="loginFormData.password" required>
           </div>
         <button type="submit">Login</button>
       </form>
@@ -23,22 +24,22 @@
         <!-- Your register form fields go here -->
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" [(ngModel)]="userData.username" required>
+            <!--<input type="text" id="username" name="username" [(ngModel)]="userData.username" required>-->
           </div>
           
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" [(ngModel)]="userData.email" required>
+            <!--<input type="email" id="email" name="email" [(ngModel)]="userData.email" required>-->
           </div>
           
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" [(ngModel)]="userData.password" required>
+            <!--<input type="password" id="password" name="password" [(ngModel)]="userData.password" required>-->
           </div>
           
           <div class="form-group">
             <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="userData.confirmPassword" required>
+            <!--<input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="userData.confirmPassword" required>-->
           </div>
         <button type="submit">Register</button>
       </form> 

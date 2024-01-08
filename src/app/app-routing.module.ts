@@ -12,11 +12,13 @@ import { StatuspageComponent } from './statuspage/statuspage.component';
 import { StockpageComponent } from './stockpage/stockpage.component';
 import { SuppliersInformationpageComponent } from './suppliers-informationpage/suppliers-informationpage.component';
 import { SupplierspageComponent } from './supplierspage/supplierspage.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
  // { path: 'login', component: HomeComponent }, // Home route
-  { path: 'about', component: AboutpageComponent }, // About route
-  { path: 'Customers', component: CustomerspageComponent }, // Customers route
+ { path: 'auth', component: AuthenticationComponent }, // About route
+ { path: 'about', component: AboutpageComponent }, // About route
+ { path: 'customers', component: CustomerspageComponent }, // Customers route
   { path: 'Login', component:  LoginComponent }, // Login route
   { path: 'DeliveryInformation ', component: DeliveryInformationpageComponent }, // DeliveryInformation route
   { path: 'Employees', component: EmployeesPageComponent }, // Employees route
