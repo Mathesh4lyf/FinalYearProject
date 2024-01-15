@@ -15,6 +15,7 @@
     text-align: left;
     border-right: 1px solid #bbb;
     border-color: white;
+    text-emphasis-color: blue;
 }
 /*.navigation {
     background-color: aliceblue;

@@ -13,9 +13,14 @@ import { StockpageComponent } from './stockpage/stockpage.component';
 import { SuppliersInformationpageComponent } from './suppliers-informationpage/suppliers-informationpage.component';
 import { SupplierspageComponent } from './supplierspage/supplierspage.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { MyComponentComponent } from './my-component/my-component.component';
+import { SuppliersComponent } from './suppliers/suppliers.component';
 
 const routes: Routes = [
  // { path: 'login', component: HomeComponent }, // Home route
+ { path: 'my-component', component: MyComponentComponent },
+ { path: 'suppliers', component: SuppliersComponent},
+ //{ path: 'suppliers', component: SupplierspageComponent},
  { path: 'auth', component: AuthenticationComponent }, // About route
  { path: 'about', component: AboutpageComponent }, // About route
  { path: 'customers', component: CustomerspageComponent }, // Customers route
@@ -28,7 +33,7 @@ const routes: Routes = [
   { path: 'Status ', component: StatuspageComponent }, // Status route
   { path: 'Stock', component: StockpageComponent }, // Stock route
   { path: 'suppliers-informationpage', component: SuppliersInformationpageComponent }, // suppliers-informationpage route
-  { path: 'Supplier', component: SupplierspageComponent}, // Supplier route
+  //{ path: 'Supplier', component: SupplierspageComponent}, // Supplier route
   // Other routes go here
 ];
 

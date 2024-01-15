@@ -16,7 +16,9 @@ import { SupplierspageComponent } from './supplierspage/supplierspage.component'
 import { SuppliersInformationpageComponent } from './suppliers-informationpage/suppliers-informationpage.component';
 import { StockpageComponent } from './stockpage/stockpage.component';
 import { StatuspageComponent } from './statuspage/statuspage.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { MyComponentComponent } from './my-component/my-component.component';
+import { SuppliersComponent } from './suppliers/suppliers.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { FormsModule } from '@angular/forms'
     SuppliersInformationpageComponent,
     StockpageComponent,
     StatuspageComponent,
-    // AuthenticatorAssertionResponse,
+    MyComponentComponent,
+    SuppliersComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { CustomerspageComponent } from './customerspage/customerspage.component'
 import { DeliveryInformationpageComponent } from './delivery-informationpage/delivery-informationpage.component';
 import { OrderInformationpageComponent } from './order-informationpage/order-informationpage.component';
 import { StatuspageComponent } from './statuspage/statuspage.component';
+import { SuppliersComponent } from './suppliers/suppliers.component';
 
 @Injectable({
   providedIn: 'root'
@@ -39,10 +40,10 @@ export class CustomersService {
   public getSuppliers(): Observable<any> {
     return this.http.get<any>(`${this.apiServerUrl}/Suppliers`)
   }
-  public createSuppliers(data:SupplierspageComponent): Observable<any> {
+  public createSuppliers(data:SuppliersComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Suppliers`,data)
   }
-  public updateSuppliers(data:SupplierspageComponent): Observable<any> {
+  public updateSuppliers(data:SuppliersComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/Suppliers`,data)
   }
   public DeleteSuppliers(data:any): Observable<any> {
