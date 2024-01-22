@@ -11,8 +11,23 @@ import { NgForm } from '@angular/forms';
 export class AuthenticationComponent {
   currentForm: 'login' | 'register' = 'login';
   loginFormData:{
-    username:""
-    password:""
+    username: string;
+    password: string;
+  } = {
+    username: "",
+    password: ""
+  };
+
+  registerFormData:{
+    username: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+  } = {
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
   };
 
   constructor() {
@@ -32,6 +47,7 @@ export class AuthenticationComponent {
   }
 
   onRegisterFormSubmit(): void {
+    console.log("form data ==> ",this.registerFormData)
     // Handle register form submission logic
   }
 }
