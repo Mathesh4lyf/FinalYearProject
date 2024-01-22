@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import {AuthenticationComponent} from './authentication/authentication.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
@@ -18,13 +17,10 @@ import { SuppliersInformationpageComponent } from './suppliers-informationpage/s
 import { StockpageComponent } from './stockpage/stockpage.component';
 import { StatuspageComponent } from './statuspage/statuspage.component';
 import { FormsModule } from '@angular/forms';
-import { MyComponentComponent } from './my-component/my-component.component';
-import { SuppliersComponent } from './suppliers/suppliers.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     AuthenticationComponent,
     HomepageComponent,
     AboutpageComponent,
@@ -36,9 +32,7 @@ import { SuppliersComponent } from './suppliers/suppliers.component'
     SupplierspageComponent,
     SuppliersInformationpageComponent,
     StockpageComponent,
-    StatuspageComponent,
-    MyComponentComponent,
-    SuppliersComponent,
+    StatuspageComponent
   ],
   imports: [
     BrowserModule,
