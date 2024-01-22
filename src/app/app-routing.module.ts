@@ -12,11 +12,13 @@ import { StockpageComponent } from './stockpage/stockpage.component';
 import { SuppliersInformationpageComponent } from './suppliers-informationpage/suppliers-informationpage.component';
 import { SupplierspageComponent } from './supplierspage/supplierspage.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+
 const routes: Routes = [
- //{ path: 'suppliers', component: SupplierspageComponent},
- { path: 'auth', component: AuthenticationComponent }, // About route
- { path: 'about', component: AboutpageComponent }, // About route
- { path: 'customers', component: CustomerspageComponent }, // Customers route
+  { path: '', component: AuthenticationComponent },
+  { path: 'auth', component: AuthenticationComponent },
+  { path: 'suppliers', component: SupplierspageComponent},
+  { path: 'about', component: AboutpageComponent }, // About route
+  { path: 'customers', component: CustomerspageComponent }, // Customers route
   { path: 'DeliveryInformation ', component: DeliveryInformationpageComponent }, // DeliveryInformation route
   { path: 'Employees', component: EmployeesPageComponent }, // Employees route
   { path: 'Homepage', component: HomepageComponent }, // Homepage route
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'suppliers-informationpage', component: SuppliersInformationpageComponent }, // suppliers-informationpage route
   //{ path: 'Supplier', component: SupplierspageComponent}, // Supplier route
   // Other routes go here
-];
+]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
