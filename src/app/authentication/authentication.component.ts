@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-authentication',
+  selector: 'app-root',
   templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.css']
 })
 
 export class AuthenticationComponent {
   currentForm: 'login' | 'register' = 'login';
+  
   loginFormData:{
     username: string;
     password: string;

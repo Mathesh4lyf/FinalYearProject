@@ -1,0 +1,31 @@
+.ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Make it stick, even on scroll */
+    top: 0;
+    width: 100%;
+}
+.navigation {
+    float: left;
+    background-color: rgb(240, 191, 76);
+    display: block;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    border-right: 1px solid #bbb;
+    border-color: white;
+    text-emphasis-color: blue;
+}
+/*.navigation {
+    background-color: aliceblue;
+    display: inline;
+    float: left;
+    margin: 0%;
+    height: 50px;
+    width: 60px;
+    align-items: center;
+    padding: 0;
+    display: block;
+    border: 1px solid #000000;
+}*/

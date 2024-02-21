@@ -15,7 +15,7 @@ import { StatuspageComponent } from './statuspage/statuspage.component';
   providedIn: 'root'
 })
 export class CustomersService {
-  private apiServerUrl = 'https://localhost:44354/api';  //backend api call.
+  private apiServerUrl = 'https://localhost:44367';  //backend api call.
 
   constructor(private http: HttpClient) {}
   
@@ -37,7 +37,7 @@ export class CustomersService {
 
   //Suppliers//
   public getSuppliers(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/Suppliers`)
+    return this.http.get<any>(`${this.apiServerUrl}/Supplier`)
   }
   public createSuppliers(data:SupplierspageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Suppliers`,data)

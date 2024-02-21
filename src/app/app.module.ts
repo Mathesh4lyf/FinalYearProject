@@ -17,6 +17,80 @@ import { SuppliersInformationpageComponent } from './suppliers-informationpage/s
 import { StockpageComponent } from './stockpage/stockpage.component';
 import { StatuspageComponent } from './statuspage/statuspage.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import{RouterModule, Routes, CanActivate } from '@angular/router';
+
+const routes: Routes = [
+    {
+      path: 'Auth',
+      component:AuthenticationComponent,
+    },
+
+    {path: 'admin',
+    component: DashboardComponent,
+    
+    children: [
+      {
+        path: 'Dash',
+        component: HomepageComponent,
+      
+      },
+      {
+        path: 'About',
+        component: AboutpageComponent,
+       
+      },
+      {
+        path: 'Status',
+        component: StatuspageComponent,
+       
+      },
+      {
+        path: 'Supplier',
+        component: SuppliersInformationpageComponent,
+       
+      },
+      {
+        path: 'CustomerProfile',
+        component: CustomerspageComponent,
+        children: [
+
+        ],
+       
+      },
+      {
+          path: 'EmployeeProfile',
+          component: EmployeesPageComponent,
+        
+        }, 
+        {
+          path: 'Products',
+          component: ProductpageComponent,
+        
+        },
+        {
+          path: 'Stock',
+          component: StockpageComponent,
+          
+        },
+        {
+          path: 'Delivery',
+          component: DeliveryInformationpageComponent,
+          
+        },
+        {
+          path: 'Orders',
+          component: OrderInformationpageComponent,
+          
+        },
+        {
+          path: 'SupplierProfile',
+          component: SupplierspageComponent
+         
+        },
+    ]
+  }
+]
 
 @NgModule({
   declarations: [
@@ -32,7 +106,8 @@ import { FormsModule } from '@angular/forms';
     SupplierspageComponent,
     SuppliersInformationpageComponent,
     StockpageComponent,
-    StatuspageComponent
+    StatuspageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
