@@ -19,6 +19,7 @@ import { StatuspageComponent } from './statuspage/statuspage.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import{RouterModule, Routes, CanActivate } from '@angular/router';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [{
   path: 'auth',
@@ -77,6 +78,11 @@ children: [
       
     },
     {
+      path: 'test',
+      component: TestComponent
+     
+    },
+    {
       path: 'supplierProfile',
       component: SupplierspageComponent
      
@@ -126,7 +132,8 @@ children: [
     SuppliersInformationpageComponent,
     StockpageComponent,
     StatuspageComponent,
-    DashboardComponent
+    DashboardComponent,
+    TestComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
