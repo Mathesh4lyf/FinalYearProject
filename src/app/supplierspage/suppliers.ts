@@ -1,7 +1,7 @@
-export class Suppliers{
-    SupplierID!: Number;
-    SupplierName: string | undefined;
-    PhoneNumber: string | undefined;
-    EmailAddress: string | undefined;
-    Location: string | undefined;
+export interface Suppliers{
+    SupplierID: Number;
+    SupplierName: string; 
+    PhoneNumber: string; 
+    EmailAddress: string; 
+    Location: string;
 }

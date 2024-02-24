@@ -20,76 +20,95 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import{RouterModule, Routes, CanActivate } from '@angular/router';
 
-const routes: Routes = [
-    {
-      path: 'Auth',
-      component:AuthenticationComponent,
-    },
+const routes: Routes = [{
+  path: 'auth',
+  component:AuthenticationComponent,
+},
 
-    {path: 'admin',
-    component: DashboardComponent,
+{path: 'admin',
+component: DashboardComponent,
+
+children: [
+ 
+   {
+     path: 'about',
+     component: AboutpageComponent
+  
+   
+  },
+  {
+    path: 'status',
+    component: StatuspageComponent
+   
+  },
+  {
+    path: 'supplier',
+    component: SuppliersInformationpageComponent
+   
+  },
+  {
+    path: 'customerProfile',
+    component: CustomerspageComponent
+   
+  },
+  {
+      path: 'employeeProfile',
+      component: EmployeesPageComponent
     
-    children: [
-      {
-        path: 'Dash',
-        component: HomepageComponent,
+    }, 
+    {
+      path: 'products',
+      component: ProductpageComponent
+    
+    },
+    {
+      path: 'stock',
+      component: StockpageComponent
       
-      },
-      {
-        path: 'About',
-        component: AboutpageComponent,
-       
-      },
-      {
-        path: 'Status',
-        component: StatuspageComponent,
-       
-      },
-      {
-        path: 'Supplier',
-        component: SuppliersInformationpageComponent,
-       
-      },
-      {
-        path: 'CustomerProfile',
-        component: CustomerspageComponent,
-        children: [
+    },
+    {
+      path: 'delivery',
+      component: DeliveryInformationpageComponent
+      
+    },
+    {
+      path: 'orders',
+      component: OrderInformationpageComponent
+      
+    },
+    {
+      path: 'supplierProfile',
+      component: SupplierspageComponent
+     
+    },
+    {
+      path: '**',
+      component: HomepageComponent
+    
+    },
+]
+},
+{
+  path: 'Orders',
+  component: OrderInformationpageComponent
+  
+}
 
-        ],
-       
-      },
-      {
-          path: 'EmployeeProfile',
-          component: EmployeesPageComponent,
-        
-        }, 
-        {
-          path: 'Products',
-          component: ProductpageComponent,
-        
-        },
-        {
-          path: 'Stock',
-          component: StockpageComponent,
-          
-        },
-        {
-          path: 'Delivery',
-          component: DeliveryInformationpageComponent,
-          
-        },
-        {
-          path: 'Orders',
-          component: OrderInformationpageComponent,
-          
-        },
-        {
-          path: 'SupplierProfile',
-          component: SupplierspageComponent
-         
-        },
-    ]
-  }
+  // {path: '', component: AuthenticationComponent },
+  // { path: 'auth', component: AuthenticationComponent },
+  // { path: 'suppliers', component: SupplierspageComponent},
+  // { path: 'about', component: AboutpageComponent }, // About route
+  // { path: 'customers', component: CustomerspageComponent }, // Customers route
+  // { path: 'DeliveryInformation ', component: DeliveryInformationpageComponent }, // DeliveryInformation route
+  // { path: 'Employees', component: EmployeesPageComponent }, // Employees route
+  // { path: 'Homepage', component: HomepageComponent }, // Homepage route
+  // { path: 'OrderInformation', component: OrderInformationpageComponent }, // OrderInformation route
+  // { path: 'Product', component: ProductpageComponent }, // Product route
+  // { path: 'Status ', component: StatuspageComponent }, // Status route
+  // { path: 'Stock', component: StockpageComponent }, // Stock route
+  // { path: 'suppliers-informationpage', component: SuppliersInformationpageComponent }, // suppliers-informationpage route
+  // { path: 'Supplier', component: SupplierspageComponent}, // Supplier route
+  // // Other routes go here
 ]
 
 @NgModule({
@@ -110,11 +129,16 @@ const routes: Routes = [
     DashboardComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule, FormsModule
   ],
+  // imports: [
+  //   BrowserModule,
+  //   AppRoutingModule,
+  //   FormsModule,
+  //   HttpClientModule
+  // ],
   providers: [],
   bootstrap: [AppComponent]
 })
