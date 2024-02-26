@@ -1,1 +1,36 @@
 <p>test works!</p>
+<form>
+  <div>
+    <label>SupplierID</label>
+    <input type="text" name="SupplierID"><br>
+    <label>SupplierName</label>
+    <input type="text" name="SupplierName"><br>
+    <label>PhoneNumber</label>
+    <input type="text" name="PhoneNumber"><br>
+    <label>EmailAddress</label>
+    <input type="text" name="EmailAddress"><br>
+    <label>Location</label><br>
+    <input type="text" name="Location"><br>
+  </div>
+</form>
+<div>
+    <table class="table">
+      <tr class="tr">
+        <th>Suppliers ID</th>
+        <th>Suppliers Name</th>
+        <th>Phone Number</th>
+        <th>EmailAddress</th>
+        <th>Location</th>
+      </tr>
+      <tr class="tr" *ngFor="let Suppliers of supplierslist">
+          <!--Rememeber to check with the previous one -->
+        <td>{{Suppliers.SupplierID}}</td>
+        <td>{{Suppliers.SupplierName}}</td>
+        <td>{{Suppliers.PhoneNumber}}</td>
+        <td>{{Suppliers.EmailAddress}}</td>
+        <td>{{Suppliers.Location}}</td>
+        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+      </tr>
+      <tr class="tr"></tr>
+    </table>
+  </div>

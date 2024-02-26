@@ -1,5 +1,28 @@
 <p>employees-page works!</p>
-
+<form>
+  <div>
+    <label>FirstName</label>
+    <input type="text" name="FirstName"><br>
+    <label>LastName</label>
+    <input type="text" name="LastName"><br>
+    <label>ProductID</label>
+    <input type="date" name="DateofBirth"><br>
+    <label>DateofBirth</label>
+    <input type="text" name="PhoneNumber"><br>
+    <label>PhoneNumber</label>
+    <input type="text" name="EmailAddress"><br>
+    <label>EmailAddress</label>
+    <input type="date" name="UserName"><br>
+    <label>UserName</label>
+    <input type="text" name="Password"><br>
+    <label>Password</label>
+    <input type="text" name="Role"><br>
+    <label>Role</label>
+    <input type="text" name="EmployeeID"><br>
+    <label>EmployeeID</label>
+    <input type="text" name="EmployeeID"><br>
+  </div>
+</form>
 <div>
     <table class="table">
       <tr class="tr">
@@ -13,7 +36,7 @@
         <th>Role</th>
         <th>Employee ID</th>
       </tr>
-      <tr class="tr" *ngFor="let Employees of  Employeeslist ">
+      <tr class="tr" *ngFor="let Employees of  employeeslist ">
           <!--Rememeber to check with the previous one -->
         <td>{{Employees.FirstName}}</td>
         <td>{{Employees.LastName}}</td>

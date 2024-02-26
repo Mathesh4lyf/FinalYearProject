@@ -1,5 +1,28 @@
 <p>order-informationpage works!</p>
-
+<form>
+  <div>
+    <label>CustomerID</label>
+    <input type="text" name="OrderID"><br>
+    <label>OrderID</label>
+    <input type="text" name="AgentID"><br>
+    <label>AgentID</label>
+    <input type="text" name="AgentName"><br>
+    <label>AgentName</label>
+    <input type="text" name="CustomerID"><br>
+    <label>CustomerID</label>
+    <input type="text" name="ProductID"><br>
+    <label>ProductID</label>
+    <input type="text" name="ProductName"><br>
+    <label>ProductName</label>
+    <input type="text" name="Quantity"><br>
+    <label>Quantity</label>
+    <input type="text" name="AmounttobePaid"><br>
+    <label>AmounttobePaid</label>
+    <input type="text" name="AmountPaid"><br>
+    <label>AmountPaid</label>
+    <input type="text" name="AmountPaid"><br>
+  </div>
+</form>
 <div>
     <table class="table">
       <tr class="tr">
@@ -14,7 +37,7 @@
         <th>AmounttobePaid</th>
         <th>AmountPaid</th>
       </tr>
-      <tr class="tr" *ngFor="let OrderInformationpage of OrderInformationlist">
+      <tr class="tr" *ngFor="let OrderInformationpage of orderinformationlist">
           <!--Rememeber to check with the previous one -->
         <td>{{OrderInformationpage.OrderID}}</td>
         <td>{{OrderInformationpage.AgentID}}</td>

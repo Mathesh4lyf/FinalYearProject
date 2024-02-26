@@ -1,5 +1,18 @@
 <p>customerspage works!</p>
-
+<form>
+  <div>
+    <label>CustomerID</label>
+    <input type="text" name="CustomerID"><br>
+    <label>CustomerName</label>
+    <input type="text" name="CustomerName"><br>
+    <label>PhoneNumber</label>
+    <input type="text" name="PhoneNumber"><br>
+    <label>EmailAddress</label>
+    <input type="text" name="EmailAddress"><br>
+    <label>Location</label>
+    <input type="text" name="Location"><br>
+  </div>
+</form>
 <div>
     <table class="table">
       <tr class="tr">
@@ -9,15 +22,15 @@
         <th>Email Addrress</th>
         <th>Location</th>
       </tr>
-      <!-- <tr class="tr" *ngFor="let customerspage of Customerslist"> -->
-          <!--Rememeber to check with the previous one -->
-        <!-- <td>{{customerspage.CustomerID}}</td>
+      <tr class="tr" *ngFor="let customerspage of customerslist">
+          Rememeber to check with the previous one
+         <td>{{customerspage.CustomerID}}</td> 
         <td>{{customerspage.CustomerName}}</td>
         <td>{{customerspage.PhoneNumber}}</td>
         <td>{{customerspage.EmailAddress}}</td>
-        <td>{{customerspage.Location}}</td> -->
-        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
-      <!-- </tr> -->
+        <td>{{customerspage.Location}}</td> 
+        <!-- <td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td> -->
+      </tr>
       <tr class="tr"></tr>
     </table>
   </div>

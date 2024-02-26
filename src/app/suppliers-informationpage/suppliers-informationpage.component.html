@@ -23,6 +23,30 @@
       </div>
       <button class="btn" type="Add">Add</button>
     </form> -->
+    <form>
+      <div>
+        <label>ReceivalID</label>
+        <input type="text" name="ReceivalID"><br>
+        <label>SupplierID</label>
+        <input type="text" name="SupplierID"><br>
+        <label>SupplierName</label>
+        <input type="text" name="SupplierName"><br>
+        <label>ProductID</label>
+        <input type="text" name="ProductID"><br>
+        <label>ProductName</label>
+        <input type="text" name="ProductName"><br>
+        <label>Quantity</label>
+        <input type="text" name="Quantity"><br>
+        <label>AmountPaid</label>
+        <input type="text" name="AmountPaid"><br>
+        <label>Receivedby</label>
+        <input type="text" name="Receivedby"><br>
+        <label>Status</label>
+        <input type="text" name="Status"><br>
+        <label>DateofReceival</label>
+        <input type="date" name="DateofReceival"><br>
+      </div>
+    </form>
     <div>
       <table class="table">
         <tr class="tr">
@@ -37,7 +61,7 @@
           <th>Status</th>
           <th>DateofReceival</th>
         </tr>
-        <tr class="tr" *ngFor="let SuppliersInformation of supplierslist">
+        <tr class="tr" *ngFor="let SuppliersInformation of supplierinformationlist">
             <!--Rememeber to check with the previous one -->
           <td>{{SuppliersInformation.ReceivalID}}</td>
           <td>{{SuppliersInformation.SupplierID}}</td>

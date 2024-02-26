@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Suppliers } from './suppliers';
+import { CustomersService } from '../customers.service';
+import { SupplierResponse } from './supplierresponse';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-test',
@@ -7,24 +12,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  public isUpdate=false;
+  public suppliers!: Suppliers;
+  public supplierresponse!: SupplierResponse;
+  public supplierslist:Suppliers[] = [];
+  constructor(private backendservice:CustomersService) { }
+
   ngOnInit(): void {
-    
-    // throw new Error('Method not implemented.');
-    console.log("This is the test component");
-    this.getData();
+    console.log("Calling Supplier");
+    this.getSupplier();
+
   }
-  getData() {
-    this.http.get('https://localhost:44367/Supplier/GET')
-      .subscribe(
-        data => {
-          // handle the data
-          console.log("Received Data =>",data);
-        },
-        error => {
-          // handle the error
-          console.log(" error fetching data =>",error);
-        }
-      );
-  }
+  public getSupplier():void{
+    this.backendservice.getSuppliers().subscribe(
+      (response:SupplierResponse)=>{
+        console.log("SupplierResponse",response)
+        this.suppliers=response.DATA;
+        this.supplierslist?.push(this.suppliers)
+        console.log("In message",this.supplierslist)
+      },(error:HttpErrorResponse)=>{
+        console.log("Error Message",error)
+      }
+    );
+  } 
 }

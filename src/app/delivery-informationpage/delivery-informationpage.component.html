@@ -1,5 +1,28 @@
 <p>delivery-informationpage works!</p>
-
+<form>
+  <div>
+    <label>CustomerID</label>
+    <input type="text" name="CustomerID"><br>
+    <label>CustomerName</label>
+    <input type="text" name="CustomerName"><br>
+    <label>ProductID</label>
+    <input type="text" name="ProductID"><br>
+    <label>Quantity</label>
+    <input type="text" name="Quantity"><br>
+    <label>AmountPaid</label>
+    <input type="text" name="AmountPaid"><br>
+    <label>DateOfDelivery</label>
+    <input type="date" name="DateOfDelivery"><br>
+    <label>DelivererID</label>
+    <input type="text" name="DelivererID"><br>
+    <label>DelivererName</label>
+    <input type="text" name="DelivererName"><br>
+    <label>Status</label>
+    <input type="text" name="Status"><br>
+    <label>FailedReason</label>
+    <input type="text" name="FailedReason"><br>
+  </div>
+</form>
 <div>
     <table class="table">
       <tr class="tr">
@@ -15,7 +38,8 @@
         <th>Status</th>
         <th>Failed Reason</th>
       </tr>
-      <tr class="tr" *ngFor="let Delivery of Deliverylist ">
+      <div *ngIf="ShowData">
+      <tr class="tr" *ngFor="let Delivery of DeliveryInformationlist ">
           <!--Rememeber to check with the previous one -->
         <td>{{Delivery.CustomerID}}</td>
         <td>{{Delivery.CustomerName}}</td>
@@ -31,6 +55,12 @@
 
         <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
       </tr>
+    </div>
+    <div ngelse>
+      <tr class="tr">
+        <td colspan="5">no data found</td>
+      </tr> 
+    </div>
       <tr class="tr"></tr>
     </table>
   </div>

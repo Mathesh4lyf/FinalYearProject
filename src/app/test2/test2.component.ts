@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Status } from './status';
 import { CustomersService } from '../customers.service';
-import { statusResponse } from './StatusResponse';
+import { statusResponse } from '../statuspage/StatusResponse';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
 
 @Component({
   selector: 'app-statuspage',
-  templateUrl: './statuspage.component.html',
-  styleUrls: ['./statuspage.component.css']
+  templateUrl: './test2.component.html',
+  styleUrls: ['./test2.component.css']
 })
-export class StatuspageComponent implements OnInit {
+export class Test2Component implements OnInit {
   public isUpdate=false;
   public status!: Status;
   public statusresponse!: statusResponse;

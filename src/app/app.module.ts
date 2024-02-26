@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import{RouterModule, Routes, CanActivate } from '@angular/router';
 import { TestComponent } from './test/test.component';
+import { Test2Component } from './test2/test2.component';
 
 const routes: Routes = [{
   path: 'auth',
@@ -39,12 +40,12 @@ children: [
   },
   {
     path: 'status',
-    component: StatuspageComponent
+    component: Test2Component
    
   },
   {
     path: 'supplier',
-    component: SuppliersInformationpageComponent
+    component: TestComponent
    
   },
   {
@@ -78,8 +79,18 @@ children: [
       
     },
     {
+      path: 'supplierinfo',
+      component: SuppliersInformationpageComponent
+      
+    },
+    {
       path: 'test',
       component: TestComponent
+     
+    },
+    {
+      path: 'test2',
+      component: Test2Component
      
     },
     {
@@ -133,7 +144,8 @@ children: [
     StockpageComponent,
     StatuspageComponent,
     DashboardComponent,
-    TestComponent
+    TestComponent,
+    Test2Component
   ],
   imports: [
     RouterModule.forRoot(routes),
