@@ -4,6 +4,8 @@ import { Product } from './product';
 import { CustomersService } from '../customers.service';
 import { ProductResponse } from './ProductResponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -23,6 +25,16 @@ export class ProductpageComponent implements OnInit {
     this.getProduct();
 
   }
+
+  createProduct(product:NgForm):void { 
+    console.log("form data",product.value)
+    this.backendservice.createProduct(product.value).subscribe(
+      (response:ProductResponse)=>{ 
+        console.log("ProductResponse",response)
+      });
+     
+    }
+
   public getProduct():void{
     this.backendservice.getProduct().subscribe(
       (response:ProductResponse)=>{

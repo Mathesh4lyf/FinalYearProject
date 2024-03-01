@@ -4,6 +4,7 @@ import { Stock } from './Stock';
 import { CustomersService } from '../customers.service';
 import { StockResponse } from './StockResponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-stockpage',
@@ -22,6 +23,15 @@ export class StockpageComponent implements OnInit {
     this.getstock();
 
   }
+
+  createstock(stock:NgForm):void { 
+    console.log("form data",stock.value)
+    this.backendservice.createstock(stock.value).subscribe(
+      (response:StockResponse)=>{ 
+        console.log("StockResponse",response)
+      });
+  }
+
   public getstock():void{
     this.backendservice.getstock().subscribe(
       (response:StockResponse)=>{

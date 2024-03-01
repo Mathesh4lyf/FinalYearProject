@@ -1,26 +1,30 @@
 <p>delivery-informationpage works!</p>
-<form>
+<form #deliveryinformationregistration="ngForm" (ngSubmit)="createDelivery(deliveryinformationregistration)">
   <div>
     <label>CustomerID</label>
-    <input type="text" name="CustomerID"><br>
+    <input type="text" ngModel name="CustomerID"><br>
     <label>CustomerName</label>
-    <input type="text" name="CustomerName"><br>
+    <input type="text" ngModel name="CustomerName"><br>
     <label>ProductID</label>
-    <input type="text" name="ProductID"><br>
+    <input type="text" ngModel name="ProductID"><br>
+    <label>ProductName</label>
+    <input type="text" ngModel name="ProductName"><br>
     <label>Quantity</label>
-    <input type="text" name="Quantity"><br>
+    <input type="text" ngModel name="Quantity"><br>
     <label>AmountPaid</label>
-    <input type="text" name="AmountPaid"><br>
+    <input type="text" ngModel name="AmountPaid"><br>
     <label>DateOfDelivery</label>
-    <input type="date" name="DateOfDelivery"><br>
+    <input type="date" ngModel name="DateOfDelivery"><br>
     <label>DelivererID</label>
-    <input type="text" name="DelivererID"><br>
+    <input type="text" ngModel name="DelivererID"><br>
     <label>DelivererName</label>
-    <input type="text" name="DelivererName"><br>
+    <input type="text" ngModel name="DelivererName"><br>
     <label>Status</label>
-    <input type="text" name="Status"><br>
+    <input type="text" ngModel name="Status"><br>
     <label>FailedReason</label>
-    <input type="text" name="FailedReason"><br>
+    <input type="text" ngModel name="FailedReason"><br>
+    <button type="submit">createDeliveryInformation
+    </button>
   </div>
 </form>
 <div>

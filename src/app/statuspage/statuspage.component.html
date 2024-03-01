@@ -1,4 +1,12 @@
 <p>statuspage works!</p>
+<form #statusregistration="ngForm" (ngSubmit)="createstatus(statusregistration)">
+  <div>
+    <label>StatusName</label>
+    <input type="text" ngModel name="StatusName"><br>
+<button type="submit">createstatus
+</button>
+</div>
+</form>
 
 <div>
     <table class="table">

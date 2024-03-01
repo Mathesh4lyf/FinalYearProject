@@ -1,26 +1,28 @@
 <p>order-informationpage works!</p>
-<form>
+<form #orderinformationregistration="ngForm" (ngSubmit)="createOrderInformation(orderinformationregistration)">
   <div>
     <label>CustomerID</label>
-    <input type="text" name="OrderID"><br>
+    <input type="text" ngModel name="CustomerID"><br>
+    <label>CustomerName</label>
+    <input type="text" ngModel name="CustomerName"><br>
     <label>OrderID</label>
-    <input type="text" name="AgentID"><br>
+    <input type="text" ngModel name="OrderID"><br>
     <label>AgentID</label>
-    <input type="text" name="AgentName"><br>
+    <input type="text"ngModel name="AgentID"><br>
     <label>AgentName</label>
-    <input type="text" name="CustomerID"><br>
-    <label>CustomerID</label>
-    <input type="text" name="ProductID"><br>
+    <input type="text" ngModel name="AgentName"><br>
     <label>ProductID</label>
-    <input type="text" name="ProductName"><br>
+    <input type="text" ngModel name="ProductID"><br>
     <label>ProductName</label>
-    <input type="text" name="Quantity"><br>
+    <input type="text" ngModel name="ProductName"><br>
     <label>Quantity</label>
-    <input type="text" name="AmounttobePaid"><br>
+    <input type="text" ngModel name="Quantity"><br>
     <label>AmounttobePaid</label>
-    <input type="text" name="AmountPaid"><br>
+    <input type="text" ngModel name="AmounttobePaid"><br>
     <label>AmountPaid</label>
-    <input type="text" name="AmountPaid"><br>
+    <input type="text" ngModel name="AmountPaid"><br>
+    <button type="submit">createOrderInformation
+    </button>
   </div>
 </form>
 <div>

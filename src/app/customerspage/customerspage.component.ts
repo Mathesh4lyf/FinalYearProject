@@ -4,6 +4,9 @@ import { Customers } from './customers';
 import { CustomersService } from '../customers.service';
 import { CustomersResponse } from './customersresponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+import { createCustomerResponse } from './createCustomerResponse';
+
 
 @Component({
   selector: 'app-customerspage',
@@ -16,10 +19,19 @@ export class CustomerspageComponent implements OnInit {
   public customersresponse!: CustomersResponse;
   public customerslist:Customers[] = [];
   constructor(private backendservice:CustomersService) { }
+  
   ngOnInit(): void {
     console.log("Calling Customers");
     this.getCustomers();
   }
+
+  createCustomer(customer:NgForm):void { 
+    console.log("form data",customer.value)
+    this.backendservice.createEmployees(customer.value).subscribe(
+      (response:createCustomerResponse)=>{ 
+        console.log("CustomerResponse",response)
+      });
+    }
   public getCustomers():void{
     this.backendservice.getcustomers().subscribe(
       (response:CustomersResponse)=>{

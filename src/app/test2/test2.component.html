@@ -1,11 +1,11 @@
 <p>test2 works!</p>
 <p>statuspage works!</p>
-<form>
+<form #statusregistration="ngForm" (ngSubmit)="createstatus(statusregistration)">
   <div>
-    <label>StatusID</label>
-    <input type="text" name="StatusID"><br>
     <label>StatusName</label>
-    <input type="text" name="StatusName"><br>
+    <input type="text" ngModel name="StatusName"><br>
+    <button type="submit">createstatus
+    </button>
   </div>
 </form>
 <div>

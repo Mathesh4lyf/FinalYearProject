@@ -1,0 +1,9 @@
+// import { Delivery } from "./employees";
+
+export interface createSupplierResponse{
+    
+    RESPONSECODE: string 
+    RESPONSEMESSAGE: string 
+    
+    
+}

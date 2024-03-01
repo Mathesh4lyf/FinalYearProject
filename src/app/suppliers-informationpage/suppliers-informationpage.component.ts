@@ -4,6 +4,8 @@ import { SuppliersInformation } from './suppliers-information';
 import { CustomersService } from '../customers.service';
 import { SupplierInformationResponse } from './SupplierInformationResponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -22,6 +24,14 @@ export class SuppliersInformationpageComponent implements OnInit {
     console.log("Calling SupplierInformation");
     this.getSuppliersInformation();
 
+  }
+
+  createSuppliersInformation(supplierinformation:NgForm):void { 
+    console.log("form data",supplierinformation.value)
+    this.backendservice.createSuppliersInformation(supplierinformation.value).subscribe(
+      (response:SupplierInformationResponse)=>{ 
+        console.log("SupplierInformationResponse",response)
+      });
   }
   public getSuppliersInformation():void{
     this.backendservice.getSuppliersInformation().subscribe(

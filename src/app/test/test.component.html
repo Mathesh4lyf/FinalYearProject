@@ -1,16 +1,16 @@
 <p>test works!</p>
-<form>
+<form #supplierregistration="ngForm" (ngSubmit)="createSuppliers(supplierregistration)">
   <div>
-    <label>SupplierID</label>
-    <input type="text" name="SupplierID"><br>
     <label>SupplierName</label>
-    <input type="text" name="SupplierName"><br>
+    <input type="text" ngModel name="SupplierName"><br>
     <label>PhoneNumber</label>
-    <input type="text" name="PhoneNumber"><br>
+    <input type="text" ngModel name="PhoneNumber"><br>
     <label>EmailAddress</label>
-    <input type="text" name="EmailAddress"><br>
-    <label>Location</label><br>
-    <input type="text" name="Location"><br>
+    <input type="text" ngModel name="EmailAddress"><br>
+    <label>Location</label>
+    <input type="text" ngModel name ="Location"><br>
+    <button type="submit">createSupplier
+    </button>
   </div>
 </form>
 <div>

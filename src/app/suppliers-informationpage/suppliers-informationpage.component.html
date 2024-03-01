@@ -23,28 +23,30 @@
       </div>
       <button class="btn" type="Add">Add</button>
     </form> -->
-    <form>
+    <form #supplierinformationregistration="ngForm" (ngSubmit)="createSuppliersInformation(supplierinformationregistration)">
       <div>
         <label>ReceivalID</label>
-        <input type="text" name="ReceivalID"><br>
+        <input type="text" ngModel name="ReceivalID"><br>
         <label>SupplierID</label>
-        <input type="text" name="SupplierID"><br>
+        <input type="text" ngModel name="SupplierID"><br>
         <label>SupplierName</label>
-        <input type="text" name="SupplierName"><br>
+        <input type="text" ngModel name="SupplierName"><br>
         <label>ProductID</label>
-        <input type="text" name="ProductID"><br>
+        <input type="text" ngModel name="ProductID"><br>
         <label>ProductName</label>
-        <input type="text" name="ProductName"><br>
+        <input type="text" ngModel name="ProductName"><br>
         <label>Quantity</label>
-        <input type="text" name="Quantity"><br>
+        <input type="text" ngModel name="Quantity"><br>
         <label>AmountPaid</label>
-        <input type="text" name="AmountPaid"><br>
+        <input type="text" ngModel name="AmountPaid"><br>
         <label>Receivedby</label>
-        <input type="text" name="Receivedby"><br>
+        <input type="text" ngModel name="Receivedby"><br>
         <label>Status</label>
-        <input type="text" name="Status"><br>
+        <input type="text" ngModel name="Status"><br>
         <label>DateofReceival</label>
-        <input type="date" name="DateofReceival"><br>
+        <input type="date" ngModel name="DateofReceival"><br>
+        <button type="submit">createSuppliersInformation
+        </button>
       </div>
     </form>
     <div>

@@ -4,6 +4,8 @@ import { Status } from './status';
 import { CustomersService } from '../customers.service';
 import { statusResponse } from './StatusResponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+
 
 
 
@@ -24,6 +26,15 @@ export class StatuspageComponent implements OnInit {
     this.getstatus();
 
   }
+
+  createstatus(product:NgForm):void { 
+    console.log("form data",product.value)
+    this.backendservice.createstatus(product.value).subscribe(
+      (response:statusResponse)=>{ 
+        console.log("StatusResponse",response)
+      });
+     
+    }
   public getstatus():void{
     this.backendservice.getstatus().subscribe(
       (response:statusResponse)=>{

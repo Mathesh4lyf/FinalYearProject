@@ -1,16 +1,14 @@
 <p>productpage works!</p>
-<form>
+<form #productregistration="ngForm" (ngSubmit)="createProduct(productregistration)">
   <div>
-    <label>ProductID</label>
-    <input type="text" name="ProductID"><br>
     <label>ProductName</label>
-    <input type="text" name="ProductName"><br>
+    <input type="text" ngModel name="ProductName"><br>
     <label>ProductType</label>
-    <input type="text" name="ProductType"><br>
-    <label>Quantity</label>
-    <input type="text" name="Quantity"><br>
+    <input type="text" ngModel name="ProductType"><br>
     <label>ProductDescription</label><br>
-    <input type="text" name="ProductDescription"><br>
+    <input type="text" ngModel name="ProductDescription"><br>
+    <button type="submit">createProduct
+    </button>
   </div>
 </form>
 <div>

@@ -4,6 +4,7 @@ import { Delivery } from './delivery-information';
 import { CustomersService } from '../customers.service';
 import { DeliveryInformationResponse } from './DeliveryInformationResponse '; 
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -25,6 +26,14 @@ export class DeliveryInformationpageComponent implements OnInit {
     this.getDeliveryInformation();
 
   }
+
+  createDelivery(delivery:NgForm):void { 
+    console.log("form data",delivery.value)
+    this.backendservice.createDelivery(delivery.value).subscribe(
+      (response:DeliveryInformationResponse)=>{ 
+        console.log("DeliveryInformationResponse",response)
+      });
+    }
   public getDeliveryInformation():void{
     this.backendservice.getDelivery().subscribe(
       (response:DeliveryInformationResponse)=>{

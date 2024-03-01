@@ -12,6 +12,8 @@ import { OrderInformationpageComponent } from './order-informationpage/order-inf
 import { StatuspageComponent } from './statuspage/statuspage.component';
 import { SupplierResponse } from './supplierspage/supplierresponse';
 import { DeliveryInformationResponse } from './delivery-informationpage/DeliveryInformationResponse ';
+import { NgForm } from '@angular/forms';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +31,7 @@ export class CustomersService {
     return this.http.get<any>(`${this.apiServerUrl}/SupplierInformation/STARTGET/3`)
   }
   public createSuppliersInformation(data:SuppliersInformation): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/SuppliersInformation`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/SupplierInformation/POST`,data)
   }
   public updateSuppliersInformation(data:SuppliersInformation): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/SuppliersInformation`,data)
@@ -43,7 +45,7 @@ export class CustomersService {
     return this.http.get<SupplierResponse>(`${this.apiServerUrl}/Supplier/GET`)
   }
   public createSuppliers(data:SupplierspageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/Suppliers`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Supplier/POST`,data)
   }
   public updateSuppliers(data:SupplierspageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/Suppliers`,data)
@@ -56,8 +58,8 @@ export class CustomersService {
   public getEmployees(): Observable<any> {
     return this.http.get<any>(`${this.apiServerUrl}/Employee/STARTGET/1`)
   }
-  public createEmployees(data:EmployeesPageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/Employees`,data)
+  public createEmployees(data:NgForm): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/Employee/POST`,data)
   }
   public updateEmployees(data:EmployeesPageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/Employees`,data)
@@ -71,7 +73,7 @@ export class CustomersService {
     return this.http.get<any>(`${this.apiServerUrl}/Products/STARTGET/1`)
   }
   public createProduct(data:ProductpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/Product`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Products/POST`,data)
   }
   public updateProduct(data:ProductpageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/Product`,data)
@@ -85,7 +87,7 @@ export class CustomersService {
     return this.http.get<any>(`${this.apiServerUrl}/Stock/STARTGET/1`)
   }
   public createstock(data:StockpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/stock`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Stock/POST`,data)
   }
   public updatestock(data:StockpageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/stock`,data)
@@ -102,7 +104,7 @@ export class CustomersService {
   //   return this.http.get<any>(`${this.apiTest}/Test3`)
   // }
   public createcustomers(data:CustomerspageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/Customers`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Customers/POST`,data)
   }
   public updatecustomers(data:CustomerspageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/Customers`,data)
@@ -116,7 +118,7 @@ export class CustomersService {
     return this.http.get<DeliveryInformationResponse>(`${this.apiServerUrl}/DeliveryInformation/STARTGET/1`)
   }
   public createDelivery(data:DeliveryInformationpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/delivery-information`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/POST`,data)
   }
   public updateDelivery(data:DeliveryInformationpageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/delivery-information`,data)
@@ -130,7 +132,7 @@ export class CustomersService {
     return this.http.get<any>(`${this.apiServerUrl}/OrderInformation/STARTGET/8`)
   }
   public createOrderInformation(data:OrderInformationpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/order-information`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/POST`,data)
   }
   public updateOrderInformation(data:OrderInformationpageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/order-information`,data)
@@ -144,7 +146,7 @@ export class CustomersService {
     return this.http.get<any>(`${this.apiServerUrl}/Status/STARTGET/2`)
   }
   public createstatus(data:StatuspageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/status`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Status/POST`,data)
   }
   public updatestatus(data:StatuspageComponent): Observable<any> {
     return this.http.put<any>(`${this.apiServerUrl}/status`,data)
@@ -153,7 +155,9 @@ export class CustomersService {
     return this.http.delete<any>(`${this.apiServerUrl}/status/`+data)
   }
 
-  
+  public createlogin(data:AuthenticationComponent): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/Login/POST`,data)
+  }
   /*login
   public createAuth(data:Auth): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Login`,data)

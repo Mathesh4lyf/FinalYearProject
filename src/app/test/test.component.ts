@@ -4,6 +4,7 @@ import { Suppliers } from './suppliers';
 import { CustomersService } from '../customers.service';
 import { SupplierResponse } from './supplierresponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -23,6 +24,15 @@ export class TestComponent implements OnInit {
     this.getSupplier();
 
   }
+
+  createSuppliers(suppliers:NgForm):void { 
+    console.log("form data",suppliers.value)
+    this.backendservice.createSuppliers(suppliers.value).subscribe(
+      (response:SupplierResponse)=>{ 
+        console.log("SuppliersResponse",response)
+      });
+  }
+
   public getSupplier():void{
     this.backendservice.getSuppliers().subscribe(
       (response:SupplierResponse)=>{

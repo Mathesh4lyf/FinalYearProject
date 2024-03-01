@@ -4,6 +4,8 @@ import { OrderInformation } from './order-information';
 import { CustomersService } from '../customers.service';
 import { OrderInformationResponse } from './OrderInformationResponse';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-order-informationpage',
@@ -22,6 +24,14 @@ export class OrderInformationpageComponent implements OnInit {
     this.getOrderInformation();
 
   }
+  createOrderInformation(orderinformation:NgForm):void { 
+    console.log("form data",orderinformation.value)
+    this.backendservice.createOrderInformation(orderinformation.value).subscribe(
+      (response:OrderInformationResponse)=>{ 
+        console.log("EmployeesResponse",response)
+      });
+     
+    }
   public getOrderInformation():void{
     this.backendservice.getOrderInformation().subscribe(
       (response:OrderInformationResponse)=>{

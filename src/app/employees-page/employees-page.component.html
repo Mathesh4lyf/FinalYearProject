@@ -1,26 +1,24 @@
 <p>employees-page works!</p>
-<form>
+<form #employeeregistration="ngForm" (ngSubmit)="createEmployee(employeeregistration)">
   <div>
     <label>FirstName</label>
-    <input type="text" name="FirstName"><br>
+    <input type="text" ngModel name="FirstName"><br>
     <label>LastName</label>
-    <input type="text" name="LastName"><br>
-    <label>ProductID</label>
-    <input type="date" name="DateofBirth"><br>
+    <input type="text" ngModel name="LastName"><br>
     <label>DateofBirth</label>
-    <input type="text" name="PhoneNumber"><br>
+    <input type="date" ngModel name="DateofBirth"><br>
     <label>PhoneNumber</label>
-    <input type="text" name="EmailAddress"><br>
+    <input type="text" ngModel name="PhoneNumber"><br>
     <label>EmailAddress</label>
-    <input type="date" name="UserName"><br>
+    <input type="text" ngModel name="EmailAddress"><br>
     <label>UserName</label>
-    <input type="text" name="Password"><br>
+    <input type="text" ngModel name="UserName"><br>
     <label>Password</label>
-    <input type="text" name="Role"><br>
+    <input type="text" ngModel name="Password"><br>
     <label>Role</label>
-    <input type="text" name="EmployeeID"><br>
-    <label>EmployeeID</label>
-    <input type="text" name="EmployeeID"><br>
+    <input type="text" ngModel name="Role"><br>
+    <button type="submit">createEmployee
+    </button>
   </div>
 </form>
 <div>

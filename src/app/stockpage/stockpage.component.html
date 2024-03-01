@@ -1,14 +1,16 @@
 <p>stockpage works!</p>
-<form>
+<form #stockregistration="ngForm" (ngSubmit)="createstock(stockregistration)">
   <div>
     <label>ProductID</label>
-    <input type="text" name="ProductID"><br>
+    <input type="text" ngModel name="ProductID"><br>
     <label>ProductName</label>
-    <input type="text" name="ProductName"><br>
+    <input type="text" ngModel name="ProductName"><br>
     <label>ProductType</label>
-    <input type="text" name="ProductType"><br>
+    <input type="text" ngModel name="ProductType"><br>
     <label>QuantityAvailable</label>
-    <input type="text" name="QuantityAvailable"><br>
+    <input type="text" ngModel name="QuantityAvailable"><br>
+    <button type="submit">createstock
+    </button>
   </div>
 </form>
 <div>
