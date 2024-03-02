@@ -1,7 +1,10 @@
 <div class="auth-container">
     <div *ngIf="currentForm === 'login'; else registerForm">
       <h2>Login</h2>
-      <form #loginForm="ngForm" id="loginForm" (ngSubmit)="onLoginFormSubmit()">
+      <p *ngIf="authmessage" >
+      {{authmessage}}
+      </p>
+      <form #loginForm="ngForm" id="loginForm" (ngSubmit)=" createlogin(loginForm)">
         
         <div class="form-group">
             <label for="username"l>Username</label>

@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import{RouterModule, Routes, CanActivate } from '@angular/router';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
+import { AuthGurdService as AuthGuard} from './authguard.guard';
 
 const routes: Routes = [{
   path: 'auth',
@@ -29,6 +30,7 @@ const routes: Routes = [{
 
 {path: 'admin',
 component: DashboardComponent,
+canActivate: [AuthGuard],
 
 children: [
  
@@ -106,8 +108,8 @@ children: [
 ]
 },
 {
-  path: 'Orders',
-  component: OrderInformationpageComponent
+  path: '**',
+  component: AuthenticationComponent
   
 }
 
@@ -145,7 +147,8 @@ children: [
     StatuspageComponent,
     DashboardComponent,
     TestComponent,
-    Test2Component
+    Test2Component,
+
   ],
   imports: [
     RouterModule.forRoot(routes),

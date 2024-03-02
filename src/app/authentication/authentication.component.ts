@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { createAuthenticationResponse } from './createAuthenticationResponse';
 import { CustomersService } from '../customers.service';
+import { AuthenticationResponse } from './authenticationresponse';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -38,9 +40,11 @@ export class AuthenticationComponent {
     password: "",
     confirmPassword: ""
   };
-  backendservice: any;
+  username!: string
+  authmessage!: string
+  // backendservice: any;
 
-  constructor() {
+  constructor(private backendservice:CustomersService, private router: Router) {
     this.loginFormData = {
       username: '',
       password: ''
@@ -56,10 +60,20 @@ export class AuthenticationComponent {
     // Handle login form submission logic
   }
   createlogin(login:NgForm):void { 
-    console.log("form data",login.value)
+    // console.log("form data",login.value)
+    // console.log("username",login.form.controls['username'].value)
+    this.username=login.form.controls['username'].value
+    // this.loginFormData=(loginFormData)login
     this.backendservice.createlogin(login.value).subscribe(
-      (response:createAuthenticationResponse)=>{ 
+      (response:AuthenticationResponse)=>{ 
         console.log("LoginResponse",response)
+        this.authmessage=response.message
+        if (response.result===true) {
+          console.log("Billy")
+          sessionStorage.setItem('user',this.username)
+            sessionStorage.setItem('auth','Yes')
+            this.router.navigate(['admin'])
+        }
       });
   }
 
