@@ -1,12 +1,11 @@
 export class OrderInformation{
-    OrderID!: BigInteger ;
-    AgentID: string | undefined;
-    AgentName: string | undefined
-    CustomerID: string | undefined;
-    CustomerName: string | undefined;
-    ProductID: string | undefined;
-    ProductName: string | undefined;
-    Quantity: string | undefined;
-    AmounttobePaid: string | undefined;
-    AmountPaid: string | undefined;
+    OrderID!: BigInteger;
+    EmployeeName!: string;
+    CustomerName!: string;
+    ProductName!: string;
+    Quantity!: string;
+    AmounttobePaid!: string;
+    AmountPaid!: string ;
+    DateOfOrder!: string;
+    Status!: string;
 }

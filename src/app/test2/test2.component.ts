@@ -5,6 +5,7 @@ import { CustomersService } from '../customers.service';
 import { statusResponse } from '../statuspage/StatusResponse';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { StatusResponse } from './statusresponse';
 
 
 
@@ -15,7 +16,8 @@ import { NgForm } from '@angular/forms';
 })
 export class Test2Component implements OnInit {
   public isUpdate=false;
-  public status!: Status;
+  public buttonmessage="CreateStatus";
+  public status: Status=new Status;
   public statusresponse!: statusResponse;
   public statuslist:Status[] = [];
   constructor(private backendservice:CustomersService) { }
@@ -28,19 +30,39 @@ export class Test2Component implements OnInit {
 
   createstatus(status:NgForm):void { 
     console.log("form data",status.value)
+    if(this.isUpdate){
+      this.backendservice.updatestatus(status.value).subscribe(
+        (response:StatusResponse)=>{ 
+          console.log("StatussResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getstatus();
+        });
+    }else{
     this.backendservice.createstatus(status.value).subscribe(
       (response:statusResponse)=>{ 
         console.log("SuppliersResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getstatus();
       });
   }
+}
+editStatus(status:Status):void { 
+ this.status=status
+ this.isUpdate=true
+ this.buttonmessage="UpdateStatus"
+}
+deleteStatus(status:Status):void { 
+ 
+}
 
   public getstatus():void{
     this.backendservice.getstatus().subscribe(
       (response:statusResponse)=>{
         console.log("StatusResponse",response)
-        this.status=response.DATA;
-        this.statuslist?.push(this.status)
-        console.log("In message",this.status)
+        // this.status=response.DATA;
+        // this.statuslist?.push(this.status)
+        this.statuslist=response.DATA;
+        console.log("In message",this.statuslist)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)
       }

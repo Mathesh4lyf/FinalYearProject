@@ -4,7 +4,7 @@ export interface CustomersResponse{
     
     RESPONSECODE: string 
     RESPONSEMESSAGE: string 
-    // DATA: Customers [] ;
-    DATA: Customers  ;
+    DATA: Customers [] ;
+    // DATA: Customers  ;
     
 }

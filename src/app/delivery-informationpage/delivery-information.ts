@@ -1,5 +1,5 @@
 export class Delivery{
-    CustomerID: BigInteger | undefined;
+    CustomerID!: BigInteger | undefined;
     CustomerName!: string;
     ProductID!: BigInteger;
     ProductName!: string;

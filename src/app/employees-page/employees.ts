@@ -7,4 +7,5 @@ export class Employees{
     UserName!: string;
     Password!: string;
     Role!: string;
+    EmployeeID!: BigInteger;
 }

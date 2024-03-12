@@ -1,15 +1,16 @@
 <p>customerspage works!</p>
 <form #customerregistration="ngForm" (ngSubmit)="createCustomer(customerregistration)">
   <div>
+    <input type="hidden" ngModel="{{customers.CustomerID}}" name="CustomerID"><br>
     <label>CustomerName</label>
-    <input type="text" ngModel name="CustomerName"><br>
+    <input type="text" ngModel="{{customers.CustomerName}}" name="CustomerName"><br>
     <label>PhoneNumber</label>
-    <input type="text" ngModel name="PhoneNumber"><br>
+    <input type="text" ngModel="{{customers.PhoneNumber}}" name="PhoneNumber"><br>
     <label>EmailAddress</label>
-    <input type="text" ngModel name="EmailAddress"><br>
+    <input type="text" ngModel="{{customers.EmailAddress}}" name="EmailAddress"><br>
     <label>Location</label>
-    <input type="text" ngModel name="Location"><br>
-    <button type="submit">createCustomer
+    <input type="text" ngModel="{{customers.Location}}" name="Location"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -21,15 +22,16 @@
         <th>Phone Number</th>
         <th>Email Addrress</th>
         <th>Location</th>
+        <th colspan="2">Action</th>
       </tr>
       <tr class="tr" *ngFor="let customerspage of customerslist">
-          Rememeber to check with the previous one
+          <!-- Rememeber to check with the previous one -->
          <td>{{customerspage.CustomerID}}</td> 
         <td>{{customerspage.CustomerName}}</td>
         <td>{{customerspage.PhoneNumber}}</td>
         <td>{{customerspage.EmailAddress}}</td>
         <td>{{customerspage.Location}}</td> 
-        <!-- <td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td> -->
+        <td><button class="btn" (click)="editcustomers(customers)">Edit</button><button class="btn" (click)="deletecustomers(customers)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

@@ -1,5 +1,5 @@
 export class Customers{
-    CustomerID: BigInteger | undefined;
+    CustomerID!: BigInteger ;
     CustomerName!: string;
     PhoneNumber!: string;
     EmailAddress!: string;

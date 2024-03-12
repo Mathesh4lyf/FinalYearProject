@@ -28,27 +28,27 @@ export class CustomersService {
 
   //SuppliersInformation//
   public getSuppliersInformation(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/SupplierInformation/STARTGET/3`)
+    return this.http.get<any>(`${this.apiServerUrl}/SupplierInformation/GET`)
   }
   public createSuppliersInformation(data:SuppliersInformation): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/SupplierInformation/POST`,data)
   }
   public updateSuppliersInformation(data:SuppliersInformation): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/SuppliersInformation`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/SupplierInformation/Update`,data)
   }
   public DeleteSuppliersInformation(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/SuppliersInformation/`+data)
   }
 
   //Suppliers//
-  public getSuppliers(): Observable<SupplierResponse> {
-    return this.http.get<SupplierResponse>(`${this.apiServerUrl}/Supplier/GET`)
+  public getSuppliers(): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/Supplier/GET`)
   }
   public createSuppliers(data:SupplierspageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Supplier/POST`,data)
   }
   public updateSuppliers(data:SupplierspageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/Suppliers`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Supplier/Update`,data)
   }
   public DeleteSuppliers(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/Suppliers/`+data)
@@ -56,13 +56,13 @@ export class CustomersService {
 
   //Employees//
   public getEmployees(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/Employee/STARTGET/1`)
+    return this.http.get<any>(`${this.apiServerUrl}/Employee/GET`)
   }
   public createEmployees(data:NgForm): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Employee/POST`,data)
   }
   public updateEmployees(data:EmployeesPageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/Employees`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Employee/Update`,data)
   }
   public DeleteEmployees(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/Employees/`+data)
@@ -70,13 +70,13 @@ export class CustomersService {
 
    //Product//
    public getProduct(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/Products/STARTGET/1`)
+    return this.http.get<any>(`${this.apiServerUrl}/Products/GET`)
   }
   public createProduct(data:ProductpageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Products/POST`,data)
   }
   public updateProduct(data:ProductpageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/Product`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Products/Update`,data)
   }
   public DeleteProduct(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/Product/`+data)
@@ -90,7 +90,7 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Stock/POST`,data)
   }
   public updatestock(data:StockpageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/stock`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Stock/Update/1`,data)
   }
   public Deletestock(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/stock/`+data)
@@ -103,11 +103,11 @@ export class CustomersService {
   // public getcustomers(): Observable<any> {
   //   return this.http.get<any>(`${this.apiTest}/Test3`)
   // }
-  public createcustomers(data:CustomerspageComponent): Observable<any> {
+  public createcustomers(data:NgForm): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Customers/POST`,data)
   }
   public updatecustomers(data:CustomerspageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/Customers`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Customers/Update`,data)
   }
   public Deletecustomers(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/Customers/`+data)
@@ -115,13 +115,13 @@ export class CustomersService {
   
   //delivery-information//
   public getDelivery(): Observable<DeliveryInformationResponse> {
-    return this.http.get<DeliveryInformationResponse>(`${this.apiServerUrl}/DeliveryInformation/STARTGET/1`)
+    return this.http.get<DeliveryInformationResponse>(`${this.apiServerUrl}/DeliveryInformation/GET`)
   }
   public createDelivery(data:DeliveryInformationpageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/POST`,data)
   }
   public updateDelivery(data:DeliveryInformationpageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/delivery-information`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/Update`,data)
   }
   public DeleteDelivery(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/delivery-information/`+data)
@@ -129,13 +129,13 @@ export class CustomersService {
 
   //order-information//
   public getOrderInformation(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/OrderInformation/STARTGET/8`)
+    return this.http.get<any>(`${this.apiServerUrl}/OrderInformation/GET`)
   }
   public createOrderInformation(data:OrderInformationpageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/POST`,data)
   }
   public updateOrderInformation(data:OrderInformationpageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/order-information`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/Update/8`,data)
   }
   public DeleteOrderInformation(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/order-information/`+data)
@@ -143,13 +143,13 @@ export class CustomersService {
 
   //status//
   public getstatus(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/Status/STARTGET/2`)
+    return this.http.get<any>(`${this.apiServerUrl}/Status/GET`)
   }
   public createstatus(data:StatuspageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Status/POST`,data)
   }
   public updatestatus(data:StatuspageComponent): Observable<any> {
-    return this.http.put<any>(`${this.apiServerUrl}/status`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Status/Update`,data)
   }
   public Deletestatus(data:any): Observable<any> {
     return this.http.delete<any>(`${this.apiServerUrl}/status/`+data)

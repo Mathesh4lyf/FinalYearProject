@@ -4,6 +4,6 @@ export interface StatusResponse{
     
     RESPONSECODE: string 
     RESPONSEMESSAGE: string 
-    DATA: Status  ;
+    DATA: Status [] ;
     
 }

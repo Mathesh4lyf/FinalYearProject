@@ -15,7 +15,8 @@ import { createCustomerResponse } from './createCustomerResponse';
 })
 export class CustomerspageComponent implements OnInit {
   public isUpdate=false;
-  public customers!: Customers;
+  public buttonmessage="CreateCustomer";
+  public customers: Customers=new Customers();
   public customersresponse!: CustomersResponse;
   public customerslist:Customers[] = [];
   constructor(private backendservice:CustomersService) { }
@@ -27,18 +28,37 @@ export class CustomerspageComponent implements OnInit {
 
   createCustomer(customer:NgForm):void { 
     console.log("form data",customer.value)
-    this.backendservice.createEmployees(customer.value).subscribe(
+    if(this.isUpdate){
+      this.backendservice.updatecustomers(customer.value).subscribe(
+        (response:CustomersResponse)=>{ 
+          console.log("CustomersResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getCustomers();
+        });
+    }else{
+    this.backendservice.createcustomers(customer.value).subscribe(
       (response:createCustomerResponse)=>{ 
         console.log("CustomerResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getCustomers();
       });
     }
+  }
+  editcustomers(customer:Customers):void { 
+   this.customers=this.customers
+   this.isUpdate=true
+   this.buttonmessage="UpdateCustomer"
+  }
+ deletecustomers(customer:Customers):void { 
+   
+  }
   public getCustomers():void{
     this.backendservice.getcustomers().subscribe(
       (response:CustomersResponse)=>{
         console.log("CustomersResponse",response)
-       this.customers=response.DATA;
-        this.customerslist?.push(this.customers)
-        // this.customerslist=response.DATA
+      //  this.customers=response.DATA;
+        // this.customerslist?.push(this.customers)
+        this.customerslist=response.DATA
         console.log("In message",this.customerslist)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)

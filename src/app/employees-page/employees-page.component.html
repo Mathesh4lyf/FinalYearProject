@@ -1,23 +1,24 @@
 <p>employees-page works!</p>
 <form #employeeregistration="ngForm" (ngSubmit)="createEmployee(employeeregistration)">
   <div>
+    <input type="hidden" ngModel="{{employees.EmployeeID}}" name="EmployeeID"><br>
     <label>FirstName</label>
-    <input type="text" ngModel name="FirstName"><br>
+    <input type="text" ngModel="{{employees.FirstName}}" name="FirstName"><br>
     <label>LastName</label>
-    <input type="text" ngModel name="LastName"><br>
+    <input type="text" ngModel="{{employees.LastName}}" name="LastName"><br>
     <label>DateofBirth</label>
-    <input type="date" ngModel name="DateofBirth"><br>
+    <input type="date" ngModel="{{employees.DateofBirth}}" name="DateofBirth"><br>
     <label>PhoneNumber</label>
-    <input type="text" ngModel name="PhoneNumber"><br>
+    <input type="text" ngModel="{{employees.PhoneNumber}}" name="PhoneNumber"><br>
     <label>EmailAddress</label>
-    <input type="text" ngModel name="EmailAddress"><br>
+    <input type="text" ngModel="{{employees.EmailAddress}}" name="EmailAddress"><br>
     <label>UserName</label>
-    <input type="text" ngModel name="UserName"><br>
+    <input type="text" ngModel="{{employees.UserName}}" name="UserName"><br>
     <label>Password</label>
-    <input type="text" ngModel name="Password"><br>
+    <input type="text" ngModel="{{employees.Password}}" name="Password"><br>
     <label>Role</label>
-    <input type="text" ngModel name="Role"><br>
-    <button type="submit">createEmployee
+    <input type="text" ngModel="{{employees.Role}}" name="Role"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -33,6 +34,7 @@
         <th>Password</th>
         <th>Role</th>
         <th>Employee ID</th>
+        <th colspan="2">Action</th>
       </tr>
       <tr class="tr" *ngFor="let Employees of  employeeslist ">
           <!--Rememeber to check with the previous one -->
@@ -46,7 +48,7 @@
         <td>{{Employees.Role}}</td>
         <td>{{Employees.EmployeeID}}</td>
 
-        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        <td><button class="btn" (click)="editEmployee(Employees)">Edit</button><button class="btn" (click)="deleteEmployee(Employees)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

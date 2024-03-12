@@ -14,7 +14,8 @@ import { createEmployeeResponse } from './createEmployeeResponse';
 })
 export class EmployeesPageComponent implements OnInit {
   public isUpdate=false;
-  public employees!: Employees;
+  public buttonmessage="CreateEmployee";
+  public employees: Employees=new Employees();
   public employeesresponse!: EmployeesResponse;
   public employeeslist:Employees[] = [];
   constructor(private backendservice:CustomersService) { }
@@ -27,17 +28,37 @@ export class EmployeesPageComponent implements OnInit {
 
   createEmployee(employee:NgForm):void { 
     console.log("form data",employee.value)
+    if(this.isUpdate){
+      this.backendservice.updateEmployees(employee.value).subscribe(
+        (response:EmployeesResponse)=>{ 
+          console.log("EmployeesResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getEmployees();
+        });
+      }else{
     this.backendservice.createEmployees(employee.value).subscribe(
       (response:createEmployeeResponse)=>{ 
         console.log("EmployeesResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getEmployees();
       });
   }
+}
+editEmployee(employee:Employees):void { 
+ this.employees=employee
+ this.isUpdate=true
+ this.buttonmessage="UpdateEmployee"
+}
+deleteEmployee(employee:Employees):void { 
+ 
+}
   public getEmployees():void{
     this.backendservice.getEmployees().subscribe(
       (response:EmployeesResponse)=>{ 
         console.log("EmployeesResponse",response)
-        this.employees=response.DATA;
-        this.employeeslist?.push(this.employees)
+        // this.employees=response.DATA;
+        // this.employeeslist?.push(this.employees)
+        this.employeeslist=response.DATA;
         console.log("In message",this.employeeslist)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)

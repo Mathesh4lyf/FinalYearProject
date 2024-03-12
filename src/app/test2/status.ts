@@ -1,4 +1,4 @@
 export class Status{
     StatusID!: BigInteger ;
-    StatusName: string | undefined;
+    StatusName!: string | undefined;
 }

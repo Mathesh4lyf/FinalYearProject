@@ -1,29 +1,30 @@
 <p>delivery-informationpage works!</p>
 <form #deliveryinformationregistration="ngForm" (ngSubmit)="createDelivery(deliveryinformationregistration)">
   <div>
+    <input type="hidden" ngModel="{{deliveryinformation.CustomerID}}" name="CustomerID"><br>
     <label>CustomerID</label>
-    <input type="text" ngModel name="CustomerID"><br>
+    <input type="text" ngModel="{{deliveryinformation.CustomerID}}" name="CustomerID"><br>
     <label>CustomerName</label>
-    <input type="text" ngModel name="CustomerName"><br>
+    <input type="text" ngModel="{{deliveryinformation.CustomerName}}" name="CustomerName"><br>
     <label>ProductID</label>
-    <input type="text" ngModel name="ProductID"><br>
+    <input type="text" ngModel="{{deliveryinformation.ProductID}}" name="ProductID"><br>
     <label>ProductName</label>
-    <input type="text" ngModel name="ProductName"><br>
+    <input type="text" ngModel="{{deliveryinformation.ProductName}}" name="ProductName"><br>
     <label>Quantity</label>
-    <input type="text" ngModel name="Quantity"><br>
+    <input type="text" ngModel="{{deliveryinformation.Quantity}}" name="Quantity"><br>
     <label>AmountPaid</label>
-    <input type="text" ngModel name="AmountPaid"><br>
+    <input type="text" ngModel="{{deliveryinformation.AmountPaid}}" name="AmountPaid"><br>
     <label>DateOfDelivery</label>
-    <input type="date" ngModel name="DateOfDelivery"><br>
+    <input type="date" ngModel="{{deliveryinformation.DateOfDelivery}}" name="DateOfDelivery"><br>
     <label>DelivererID</label>
-    <input type="text" ngModel name="DelivererID"><br>
+    <input type="text" ngModel="{{deliveryinformation.DelivererID}}" name="DelivererID"><br>
     <label>DelivererName</label>
-    <input type="text" ngModel name="DelivererName"><br>
+    <input type="text" ngModel="{{deliveryinformation.DelivererName}}" name="DelivererName"><br>
     <label>Status</label>
-    <input type="text" ngModel name="Status"><br>
+    <input type="text" ngModel="{{deliveryinformation.Status}}" name="Status"><br>
     <label>FailedReason</label>
-    <input type="text" ngModel name="FailedReason"><br>
-    <button type="submit">createDeliveryInformation
+    <input type="text" ngModel="{{deliveryinformation.FailedReason}}" name="FailedReason"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -41,10 +42,11 @@
         <th>Deliverer Name</th>
         <th>Status</th>
         <th>Failed Reason</th>
+        <th colspan="2">Action</th>
       </tr>
       <div *ngIf="ShowData">
       <tr class="tr" *ngFor="let Delivery of DeliveryInformationlist ">
-          <!--Rememeber to check with the previous one -->
+          Rememeber to check with the previous one -->
         <td>{{Delivery.CustomerID}}</td>
         <td>{{Delivery.CustomerName}}</td>
         <td>{{Delivery.ProductID}}</td>
@@ -57,7 +59,7 @@
         <td>{{Delivery.Status}}</td>
         <td>{{Delivery.FailedReason}}</td>
 
-        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        <td><button class="btn" (click)="editDelivery(deliveryinformation)">Edit</button><button class="btn" (click)="deleteDelivery(Delivery)">Delete</button></td>
       </tr>
     </div>
     <div ngelse>

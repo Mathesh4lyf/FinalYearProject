@@ -1,13 +1,14 @@
 <p>productpage works!</p>
 <form #productregistration="ngForm" (ngSubmit)="createProduct(productregistration)">
   <div>
+    <input type="hidden" ngModel="{{product.ProductID}}" name="ProductID"><br>
     <label>ProductName</label>
-    <input type="text" ngModel name="ProductName"><br>
+    <input type="text" ngModel="{{product.ProductName}}" name="ProductName"><br>
     <label>ProductType</label>
-    <input type="text" ngModel name="ProductType"><br>
+    <input type="text" ngModel="{{product.ProductType}}" name="ProductType"><br>
     <label>ProductDescription</label><br>
-    <input type="text" ngModel name="ProductDescription"><br>
-    <button type="submit">createProduct
+    <input type="text" ngModel="{{product.ProductDescription}}" name="ProductDescription"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -18,6 +19,7 @@
         <th>Product Name</th>
         <th>Product Type</th>
         <th>Product Description</th>
+        <th colspan="2">Action</th>
       </tr>
       <tr class="tr" *ngFor="let Product of productlist">
           <!--Rememeber to check with the previous one -->
@@ -26,7 +28,7 @@
         <td>{{Product.ProductType}}</td>
         <td>{{Product.ProductDescription}}</td>
 
-        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        <td><button class="btn" (click)="editProduct(Product)">Edit</button><button class="btn" (click)="deleteProduct(Product)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

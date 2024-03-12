@@ -14,7 +14,8 @@ import { NgForm } from '@angular/forms';
 })
 export class OrderInformationpageComponent implements OnInit {
   public isUpdate=false;
-  public orderinformation!: OrderInformation;
+  public buttonmessage="CreateOrderInformation";
+  public orderinformation: OrderInformation=new OrderInformation();
   public orderinformationresponse!: OrderInformationResponse;
   public orderinformationlist:OrderInformation[] = [];
   constructor(private backendservice:CustomersService) { }
@@ -26,18 +27,37 @@ export class OrderInformationpageComponent implements OnInit {
   }
   createOrderInformation(orderinformation:NgForm):void { 
     console.log("form data",orderinformation.value)
+    if(this.isUpdate){
+      this.backendservice.updateOrderInformation(orderinformation.value).subscribe(
+        (response:OrderInformationResponse)=>{ 
+          console.log("OrderInformationResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getOrderInformation();
+        });
+      }else{
     this.backendservice.createOrderInformation(orderinformation.value).subscribe(
       (response:OrderInformationResponse)=>{ 
         console.log("EmployeesResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getOrderInformation();
       });
-     
     }
+  }
+  editOrderInformation(orderinformation:OrderInformation):void { 
+   this.orderinformation=orderinformation
+   this.isUpdate=true
+   this.buttonmessage="UpdateOrderInformation"
+  }
+  deleteOrderInformation(orderinformation:OrderInformation):void { 
+   
+  }
   public getOrderInformation():void{
     this.backendservice.getOrderInformation().subscribe(
       (response:OrderInformationResponse)=>{
         console.log("OrderInformationResponse",response)
-        this.orderinformation=response.DATA;
-        this.orderinformationlist?.push(this.orderinformation)
+        // this.orderinformation=response.DATA;
+        // this.orderinformationlist?.push(this.orderinformation)
+        this.orderinformationlist=response.DATA;
         console.log("In message",this.orderinformationlist)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)

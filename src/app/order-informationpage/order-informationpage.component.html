@@ -1,27 +1,24 @@
 <p>order-informationpage works!</p>
 <form #orderinformationregistration="ngForm" (ngSubmit)="createOrderInformation(orderinformationregistration)">
   <div>
-    <label>CustomerID</label>
-    <input type="text" ngModel name="CustomerID"><br>
+    <input type="hidden" ngModel="{{orderinformation.OrderID}}" name="OrderID"><br>
+    <label>EmployeeName</label>
+    <input type="text" ngModel="{{orderinformation.EmployeeName}}" name="EmployeeName"><br>
     <label>CustomerName</label>
-    <input type="text" ngModel name="CustomerName"><br>
-    <label>OrderID</label>
-    <input type="text" ngModel name="OrderID"><br>
-    <label>AgentID</label>
-    <input type="text"ngModel name="AgentID"><br>
-    <label>AgentName</label>
-    <input type="text" ngModel name="AgentName"><br>
-    <label>ProductID</label>
-    <input type="text" ngModel name="ProductID"><br>
+    <input type="text" ngModel="{{orderinformation.CustomerName}}" name="CustomerName"><br>
     <label>ProductName</label>
-    <input type="text" ngModel name="ProductName"><br>
+    <input type="text" ngModel="{{orderinformation.ProductName}}" name="ProductName"><br>
     <label>Quantity</label>
-    <input type="text" ngModel name="Quantity"><br>
+    <input type="text" ngModel="{{orderinformation.Quantity}}" name="Quantity"><br>
     <label>AmounttobePaid</label>
-    <input type="text" ngModel name="AmounttobePaid"><br>
+    <input type="text" ngModel="{{orderinformation.AmounttobePaid}}" name="AmounttobePaid"><br>
     <label>AmountPaid</label>
-    <input type="text" ngModel name="AmountPaid"><br>
-    <button type="submit">createOrderInformation
+    <input type="text" ngModel="{{orderinformation.AmountPaid}}" name="AmountPaid"><br>
+    <label>DateOfOrder</label>
+    <input type="date" ngModel="{{orderinformation.DateOfOrder}}" name="DateOfOrder"><br>
+    <label>Status</label>
+    <input type="text" ngModel="{{orderinformation.Status}}" name="Status"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -29,30 +26,30 @@
     <table class="table">
       <tr class="tr">
         <th>Order ID</th>
-        <th>Agent ID</th>
-        <th>Agent Name</th>
-        <th>Customer ID</th>
+        <th>Employee Name</th>
         <th>Customer Name</th>
-        <th>Product ID</th>
         <th>Product Name</th>
         <th>Quantity</th>
         <th>AmounttobePaid</th>
         <th>AmountPaid</th>
+        <th>DateOfOrder</th>
+        <th>Status</th>
+
+        <th colspan="2">Action</th>
       </tr>
-      <tr class="tr" *ngFor="let OrderInformationpage of orderinformationlist">
+      <tr class="tr" *ngFor="let  OrderInformationpage of orderinformationlist">
           <!--Rememeber to check with the previous one -->
         <td>{{OrderInformationpage.OrderID}}</td>
-        <td>{{OrderInformationpage.AgentID}}</td>
-        <td>{{OrderInformationpage.AgentName}}</td>
-        <td>{{OrderInformationpage.CustomerID}}</td>
+        <td>{{OrderInformationpage.EmployeeName}}</td>
         <td>{{OrderInformationpage.CustomerName}}</td>
-        <td>{{OrderInformationpage.ProductID}}</td>
         <td>{{OrderInformationpage.ProductName}}</td>
         <td>{{OrderInformationpage.Quantity}}</td>
         <td>{{OrderInformationpage.AmounttobePaid}}</td>
         <td>{{OrderInformationpage.AmountPaid}}</td>
+        <td>{{OrderInformationpage.DateOfOrder}}</td>
+        <td>{{OrderInformationpage.Status}}</td>
 
-        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        <td><button class="btn" (click)="editOrderInformation(OrderInformationpage)">Edit</button><button class="btn" (click)="deleteOrderInformation(OrderInformationpage)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

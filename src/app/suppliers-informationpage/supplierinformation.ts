@@ -1,11 +1,8 @@
 export class SuppliersInformation{
-    SupplierID!: Number;
     SupplierName: string | undefined;
     ProductID! : BigInteger;
-    ProductName :string | undefined;
+    EmployeeID! : BigInteger;
     Quantity! : BigInteger;
     AmountPaid! : string;
-    Receivedby! : string;
-    Status! : string;
-    DateofReceival! : Date;
+    DateofDelivery! : Date;
 }

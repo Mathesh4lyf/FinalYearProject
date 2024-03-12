@@ -1,9 +1,9 @@
-// import { Delivery } from "./employees";
+import { Product } from "./products";
 
 export interface ProductResponse{
     
     RESPONSECODE: string 
     RESPONSEMESSAGE: string 
-    DATA: any  ;
+    DATA: Product []  ;
     
 }

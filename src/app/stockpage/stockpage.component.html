@@ -1,15 +1,16 @@
 <p>stockpage works!</p>
 <form #stockregistration="ngForm" (ngSubmit)="createstock(stockregistration)">
   <div>
+    <input type="hidden" ngModel="{{stock.ProductID}}" name="ProductID"><br>
     <label>ProductID</label>
-    <input type="text" ngModel name="ProductID"><br>
+    <input type="text" ngModel="{{stock.ProductID}}" name="ProductID"><br>
     <label>ProductName</label>
-    <input type="text" ngModel name="ProductName"><br>
+    <input type="text" ngModel="{{stock.ProductName}}" name="ProductName"><br>
     <label>ProductType</label>
-    <input type="text" ngModel name="ProductType"><br>
+    <input type="text" ngModel="{{stock.ProductType}}" name="ProductType"><br>
     <label>QuantityAvailable</label>
-    <input type="text" ngModel name="QuantityAvailable"><br>
-    <button type="submit">createstock
+    <input type="text" ngModel="{{stock.QuantityAvailable}}" name="QuantityAvailable"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -20,6 +21,7 @@
         <th>ProductName</th>
         <th>QuantityAvailable </th>
         <th>Product Type</th>
+        <th colspan="2">Action</th>
       </tr>
       <tr class="tr" *ngFor="let Stock of stocklist">
           <!--Rememeber to check with the previous one -->
@@ -27,7 +29,7 @@
         <td>{{Stock.ProductName}}</td>
         <td>{{Stock.QuantityAvailable}}</td>
         <td>{{Stock.ProductType}}</td>
-        <!--<td><button class="btn" (click)="editStock(stocks)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        <td><button class="btn" (click)="editStock(Stock)">Edit</button><button class="btn" (click)="deleteStock(Stock)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

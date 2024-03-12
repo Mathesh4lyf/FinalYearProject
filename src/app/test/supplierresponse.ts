@@ -4,6 +4,6 @@ export interface SupplierResponse{
     
     RESPONSECODE: string 
     RESPONSEMESSAGE: string 
-    DATA: Suppliers  ;
+    DATA: Suppliers[]  ;
     
 }

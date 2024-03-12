@@ -13,7 +13,8 @@ import { NgForm } from '@angular/forms';
 })
 export class StockpageComponent implements OnInit {
   public isUpdate=false;
-  public stock!: Stock;
+  public buttonmessage="CreateStock";
+  public stock: Stock=new Stock();
   public stockresponse!: StockResponse;
   public stocklist:Stock[] = [];
   constructor(private backendservice:CustomersService) { }
@@ -26,11 +27,30 @@ export class StockpageComponent implements OnInit {
 
   createstock(stock:NgForm):void { 
     console.log("form data",stock.value)
+    if(this.isUpdate){
+      this.backendservice.updatestock(stock.value).subscribe(
+        (response:StockResponse)=>{ 
+          console.log("StockResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getstock();
+        });
+      }else{
     this.backendservice.createstock(stock.value).subscribe(
       (response:StockResponse)=>{ 
         console.log("StockResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getstock();
       });
   }
+}
+editStock(stock:Stock):void { 
+ this.stock=stock
+ this.isUpdate=true
+ this.buttonmessage="UpdateStock"
+}
+deleteStock(stock:Stock):void { 
+ 
+}
 
   public getstock():void{
     this.backendservice.getstock().subscribe(
@@ -38,6 +58,7 @@ export class StockpageComponent implements OnInit {
         console.log("StockResponse",response)
         this.stock=response.DATA;
         this.stocklist?.push(this.stock)
+        // this.stocklist=response.DATA;
         console.log("In message",this.stock)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)

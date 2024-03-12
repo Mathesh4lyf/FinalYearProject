@@ -14,7 +14,8 @@ import { NgForm } from '@angular/forms';
 })
 export class TestComponent implements OnInit {
   public isUpdate=false;
-  public suppliers!: Suppliers;
+  public buttonmessage="CreateSupplier";
+  public suppliers: Suppliers=new Suppliers();
   public supplierresponse!: SupplierResponse;
   public supplierslist:Suppliers[] = [];
   constructor(private backendservice:CustomersService) { }
@@ -27,18 +28,39 @@ export class TestComponent implements OnInit {
 
   createSuppliers(suppliers:NgForm):void { 
     console.log("form data",suppliers.value)
-    this.backendservice.createSuppliers(suppliers.value).subscribe(
-      (response:SupplierResponse)=>{ 
-        console.log("SuppliersResponse",response)
-      });
+    if(this.isUpdate){
+      this.backendservice.updateSuppliers(suppliers.value).subscribe(
+        (response:SupplierResponse)=>{ 
+          console.log("SuppliersResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getSupplier();
+        });
+    }else{
+      this.backendservice.createSuppliers(suppliers.value).subscribe(
+        (response:SupplierResponse)=>{ 
+          console.log("SuppliersResponse",response)
+          alert(response.RESPONSEMESSAGE)
+          this.getSupplier();
+        });
+    }
   }
+  editSuppliers(suppliers:Suppliers):void { 
+   this.suppliers=suppliers
+   this.isUpdate=true
+   this.buttonmessage="UpdateSupplier"
+  }
+ deleteSuppliers(suppliers:Suppliers):void { 
+   
+  }
+
 
   public getSupplier():void{
     this.backendservice.getSuppliers().subscribe(
       (response:SupplierResponse)=>{
         console.log("SupplierResponse",response)
-        this.suppliers=response.DATA;
-        this.supplierslist?.push(this.suppliers)
+        // this.suppliers=response.DATA;
+        // this.supplierslist?.push(this.suppliers)
+        this.supplierslist=response.DATA;
         console.log("In message",this.supplierslist)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)

@@ -2,9 +2,10 @@
 <p>statuspage works!</p>
 <form #statusregistration="ngForm" (ngSubmit)="createstatus(statusregistration)">
   <div>
+    <input type="hidden" ngModel="{{status.StatusID}}" name="StatusID"><br>
     <label>StatusName</label>
-    <input type="text" ngModel name="StatusName"><br>
-    <button type="submit">createstatus
+    <input type="text" ngModel="{{status.StatusName}}" name="StatusName"><br>
+    <button type="submit">{{buttonmessage}}
     </button>
   </div>
 </form>
@@ -13,13 +14,14 @@
       <tr class="tr">
         <th>Status ID</th>
         <th>Status Name</th>
+        <th colspan="2">Action</th>
       </tr>
       <tr class="tr" *ngFor="let Status of statuslist ">
           <!--Rememeber to check with the previous one -->
         <td>{{Status.StatusID}}</td>
         <td>{{Status.StatusName}}</td>
 
-        <!--<td><button class="btn" (click)="editSupplier(suppliers)">Edit</button><button class="btn" (click)="deleteSupplier(suppliers.SupplierID)">Delete</button></td>-->
+        <td><button class="btn" (click)="editStatus(Status)">Edit</button><button class="btn" (click)="deleteStatus(Status)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>
