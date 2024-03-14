@@ -3,7 +3,7 @@ export class OrderInformation{
     CustomerName: string | undefined;
     ProductName: string | undefined;
     Quantity: string | undefined;
-    AmounttobePaid: string | undefined;
+    AmountToBePaid: string | undefined;
     AmountPaid: string | undefined;
     EmployeeName: any;
     DateOfOrder: any;

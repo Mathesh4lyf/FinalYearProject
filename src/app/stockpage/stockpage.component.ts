@@ -49,7 +49,12 @@ editStock(stock:Stock):void {
  this.buttonmessage="UpdateStock"
 }
 deleteStock(stock:Stock):void { 
- 
+  this.backendservice.Deletestock(stock).subscribe(
+    (response:StockResponse)=>{ 
+      console.log("StockResponse",response)
+      alert(response.RESPONSEMESSAGE)
+      this.getstock();
+    });
 }
 
   public getstock():void{

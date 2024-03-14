@@ -50,7 +50,12 @@ export class TestComponent implements OnInit {
    this.buttonmessage="UpdateSupplier"
   }
  deleteSuppliers(suppliers:Suppliers):void { 
-   
+  this.backendservice.DeleteSuppliers(suppliers).subscribe(
+    (response:SupplierResponse)=>{ 
+      console.log("SuppliersResponse",response)
+      alert(response.RESPONSEMESSAGE)
+      this.getSupplier();
+    });
   }
 
 

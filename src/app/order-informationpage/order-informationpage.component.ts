@@ -37,7 +37,7 @@ export class OrderInformationpageComponent implements OnInit {
       }else{
     this.backendservice.createOrderInformation(orderinformation.value).subscribe(
       (response:OrderInformationResponse)=>{ 
-        console.log("EmployeesResponse",response)
+        console.log("OrderInformationResponse",response)
         alert(response.RESPONSEMESSAGE)
         this.getOrderInformation();
       });
@@ -45,11 +45,17 @@ export class OrderInformationpageComponent implements OnInit {
   }
   editOrderInformation(orderinformation:OrderInformation):void { 
    this.orderinformation=orderinformation
+   console.log(this.orderinformation)
    this.isUpdate=true
    this.buttonmessage="UpdateOrderInformation"
   }
   deleteOrderInformation(orderinformation:OrderInformation):void { 
-   
+    this.backendservice.DeleteOrderInformation(orderinformation).subscribe(
+      (response:OrderInformationResponse)=>{ 
+        console.log("OrderInformationResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getOrderInformation();
+      });
   }
   public getOrderInformation():void{
     this.backendservice.getOrderInformation().subscribe(

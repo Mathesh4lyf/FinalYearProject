@@ -6,8 +6,8 @@
     <input type="text" ngModel="{{employees.FirstName}}" name="FirstName"><br>
     <label>LastName</label>
     <input type="text" ngModel="{{employees.LastName}}" name="LastName"><br>
-    <label>DateofBirth</label>
-    <input type="date" ngModel="{{employees.DateofBirth}}" name="DateofBirth"><br>
+    <label *ngIf="!isUpdate">DateofBirth</label>
+    <input type="date" *ngIf="!isUpdate"ngModel="{{employees.DateofBirth}}" name="DateofBirth"><br>
     <label>PhoneNumber</label>
     <input type="text" ngModel="{{employees.PhoneNumber}}" name="PhoneNumber"><br>
     <label>EmailAddress</label>
@@ -30,7 +30,7 @@
         <th>Date of Birth</th>
         <th>Phone Number</th>
         <th>Email Address</th>
-        <th>User Name</th>
+        <th>UserName</th>
         <th>Password</th>
         <th>Role</th>
         <th>Employee ID</th>

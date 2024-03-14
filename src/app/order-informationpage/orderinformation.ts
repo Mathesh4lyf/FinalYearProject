@@ -4,7 +4,7 @@ export class OrderInformation{
     CustomerName!: string;
     ProductName!: string;
     Quantity!: string;
-    AmounttobePaid!: string;
+    AmountToBePaid!: string;
     AmountPaid!: string ;
     DateOfOrder!: string;
     Status!: string;

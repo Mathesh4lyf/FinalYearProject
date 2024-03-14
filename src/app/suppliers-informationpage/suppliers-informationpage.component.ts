@@ -47,11 +47,17 @@ export class SuppliersInformationpageComponent implements OnInit {
 }
 editSupplierInformation(supplierinformation:SuppliersInformation):void { 
  this.supplierinformation=supplierinformation
+ console.log(this.supplierinformation)
  this.isUpdate=true
  this.buttonmessage="UpdateSupplierInformation"
 }
 deleteSuppliersInformation(supplierinformation:SuppliersInformation):void { 
- 
+  this.backendservice.DeleteSuppliersInformation(supplierinformation).subscribe(
+    (response:SupplierInformationResponse)=>{ 
+      console.log("SupplierInformationResponse",response)
+      alert(response.RESPONSEMESSAGE)
+      this.getSuppliersInformation();
+    });
 }
   public getSuppliersInformation():void{
     this.backendservice.getSuppliersInformation().subscribe(

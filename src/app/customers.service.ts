@@ -7,11 +7,11 @@ import { EmployeesPageComponent } from './employees-page/employees-page.componen
 import { ProductpageComponent } from './productpage/productpage.component';
 import { StockpageComponent } from './stockpage/stockpage.component';
 import { CustomerspageComponent } from './customerspage/customerspage.component';
-import { DeliveryInformationpageComponent } from './delivery-informationpage/delivery-informationpage.component';
+// import { DeliveryInformationpageComponent } from './delivery-informationpage/delivery-informationpage.component';
 import { OrderInformationpageComponent } from './order-informationpage/order-informationpage.component';
 import { StatuspageComponent } from './statuspage/statuspage.component';
 import { SupplierResponse } from './supplierspage/supplierresponse';
-import { DeliveryInformationResponse } from './delivery-informationpage/DeliveryInformationResponse ';
+// import { DeliveryInformationResponse } from './delivery-informationpage/DeliveryInformationResponse ';
 import { NgForm } from '@angular/forms';
 import { AuthenticationComponent } from './authentication/authentication.component';
 
@@ -37,7 +37,7 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/SupplierInformation/Update`,data)
   }
   public DeleteSuppliersInformation(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/SuppliersInformation/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/SupplierInformation/Delete`,data)
   }
 
   //Suppliers//
@@ -51,7 +51,7 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Supplier/Update`,data)
   }
   public DeleteSuppliers(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/Suppliers/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/Supplier/Delete`,data)
   }
 
   //Employees//
@@ -65,7 +65,7 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Employee/Update`,data)
   }
   public DeleteEmployees(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/Employees/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/Employee/Delete`,data)
   }
 
    //Product//
@@ -79,7 +79,7 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Products/Update`,data)
   }
   public DeleteProduct(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/Product/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/Products/Delete`,data)
   }
 
   //stock//
@@ -90,10 +90,10 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Stock/POST`,data)
   }
   public updatestock(data:StockpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/Stock/Update/1`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/Stock/Update`,data)
   }
   public Deletestock(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/stock/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/Stock/Delete`,data)
   }
 
   //customers//
@@ -110,22 +110,22 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Customers/Update`,data)
   }
   public Deletecustomers(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/Customers/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/Customers/Delete`,data)
   }
   
   //delivery-information//
-  public getDelivery(): Observable<DeliveryInformationResponse> {
-    return this.http.get<DeliveryInformationResponse>(`${this.apiServerUrl}/DeliveryInformation/GET`)
-  }
-  public createDelivery(data:DeliveryInformationpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/POST`,data)
-  }
-  public updateDelivery(data:DeliveryInformationpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/Update`,data)
-  }
-  public DeleteDelivery(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/delivery-information/`+data)
-  }
+  // public getDelivery(): Observable<DeliveryInformationResponse> {
+  //   return this.http.get<DeliveryInformationResponse>(`${this.apiServerUrl}/DeliveryInformation/GET`)
+  // }
+  // public createDelivery(data:DeliveryInformationpageComponent): Observable<any> {
+  //   return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/POST`,data)
+  // }
+  // public updateDelivery(data:DeliveryInformationpageComponent): Observable<any> {
+  //   return this.http.post<any>(`${this.apiServerUrl}/DeliveryInformation/Update`,data)
+  // }
+  // public DeleteDelivery(data:any): Observable<any> {
+  //   return this.http.delete<any>(`${this.apiServerUrl}/delivery-information/`+data)
+  // }
 
   //order-information//
   public getOrderInformation(): Observable<any> {
@@ -135,10 +135,10 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/POST`,data)
   }
   public updateOrderInformation(data:OrderInformationpageComponent): Observable<any> {
-    return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/Update/8`,data)
+    return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/Update`,data)
   }
   public DeleteOrderInformation(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/order-information/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/OrderInformation/Delete`,data)
   }
 
   //status//
@@ -152,7 +152,7 @@ export class CustomersService {
     return this.http.post<any>(`${this.apiServerUrl}/Status/Update`,data)
   }
   public Deletestatus(data:any): Observable<any> {
-    return this.http.delete<any>(`${this.apiServerUrl}/status/`+data)
+    return this.http.post<any>(`${this.apiServerUrl}/Status/Delete`,data)
   }
 
   public createlogin(data:AuthenticationComponent): Observable<any> {

@@ -52,7 +52,12 @@ editStatus(status:Status):void {
  this.buttonmessage="UpdateStatus"
 }
 deleteStatus(status:Status):void { 
- 
+  this.backendservice.Deletestatus(status).subscribe(
+    (response:StatusResponse)=>{ 
+      console.log("StatussResponse",response)
+      alert(response.RESPONSEMESSAGE)
+      this.getstatus();
+    });
 }
 
   public getstatus():void{

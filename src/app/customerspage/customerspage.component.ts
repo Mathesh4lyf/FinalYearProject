@@ -45,12 +45,17 @@ export class CustomerspageComponent implements OnInit {
     }
   }
   editcustomers(customer:Customers):void { 
-   this.customers=this.customers
+   this.customers=customer
    this.isUpdate=true
    this.buttonmessage="UpdateCustomer"
   }
  deletecustomers(customer:Customers):void { 
-   
+  this.backendservice.Deletecustomers(customer).subscribe(
+    (response:CustomersResponse)=>{ 
+      console.log("CustomersResponse",response)
+      alert(response.RESPONSEMESSAGE)
+      this.getCustomers();
+    });
   }
   public getCustomers():void{
     this.backendservice.getcustomers().subscribe(

@@ -10,7 +10,7 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ProductpageComponent } from './productpage/productpage.component';
 import { EmployeesPageComponent } from './employees-page/employees-page.component';
 import { CustomerspageComponent } from './customerspage/customerspage.component';
-import { DeliveryInformationpageComponent } from './delivery-informationpage/delivery-informationpage.component';
+// import { DeliveryInformationpageComponent } from './delivery-informationpage/delivery-informationpage.component';
 import { OrderInformationpageComponent } from './order-informationpage/order-informationpage.component';
 import { SupplierspageComponent } from './supplierspage/supplierspage.component';
 import { SuppliersInformationpageComponent } from './suppliers-informationpage/suppliers-informationpage.component';
@@ -70,11 +70,11 @@ children: [
       component: StockpageComponent
       
     },
-    {
-      path: 'delivery',
-      component: DeliveryInformationpageComponent
+    // {
+    //   path: 'delivery',
+    //   component: DeliveryInformationpageComponent
       
-    },
+    // },
     {
       path: 'orders',
       component: OrderInformationpageComponent
@@ -139,7 +139,7 @@ children: [
     ProductpageComponent,
     EmployeesPageComponent,
     CustomerspageComponent,
-    DeliveryInformationpageComponent,
+    // DeliveryInformationpageComponent,
     OrderInformationpageComponent,
     SupplierspageComponent,
     SuppliersInformationpageComponent,

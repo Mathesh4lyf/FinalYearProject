@@ -46,11 +46,17 @@ export class EmployeesPageComponent implements OnInit {
 }
 editEmployee(employee:Employees):void { 
  this.employees=employee
+ console.log(this.employees)
  this.isUpdate=true
  this.buttonmessage="UpdateEmployee"
 }
 deleteEmployee(employee:Employees):void { 
- 
+  this.backendservice.DeleteEmployees(employee).subscribe(
+    (response:EmployeesResponse)=>{ 
+      console.log("EmployeesResponse",response)
+      alert(response.RESPONSEMESSAGE)
+      this.getEmployees();
+    });
 }
   public getEmployees():void{
     this.backendservice.getEmployees().subscribe(

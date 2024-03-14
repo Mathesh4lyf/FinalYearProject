@@ -32,8 +32,8 @@
     <input type="text" ngModel="{{supplierinformation.ProductID}}" name="ProductID"><br>
     <label>Quantity</label>
     <input type="text" ngModel="{{supplierinformation.Quantity}}" name="Quantity"><br>
-    <label>DateOfReceival</label>
-    <input type="date" ngModel="{{supplierinformation.DateOfReceival}}" name="DateOfReceival"><br>
+    <label *ngIf="!isUpdate">DateOfDelivery</label>
+    <input type="date" *ngIf="!isUpdate" ngModel="{{supplierinformation.DateOfDelivery}}" name="DateOfDelivery"><br>
     <label>AmountPaid</label>
     <input type="text" ngModel="{{supplierinformation.AmountPaid}}" name="AmountPaid"><br>
     <label>EmployeeID</label>

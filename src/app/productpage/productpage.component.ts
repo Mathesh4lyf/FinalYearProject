@@ -54,7 +54,12 @@ export class ProductpageComponent implements OnInit {
    this.buttonmessage="UpdateProduct"
   }
   deleteProduct(product:Product):void { 
-   
+    this.backendservice.DeleteProduct(product).subscribe(
+      (response:ProductResponse)=>{ 
+        console.log("ProductResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        this.getProduct();
+      });
   }
 
   public getProduct():void{
