@@ -1,71 +1,96 @@
 /* Style for form */
 form {
-    margin-bottom: 20px;
-  }
-  
-  /* Style for form labels */
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  /* Style for form inputs */
-  input[type="text"],
-  input[type="date"],
-  button {
-    margin-bottom: 10px;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-  }
-  
-  input[type="text"],
-  input[type="date"] {
-    background-color: #f9f9f9;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Style for table */
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  /* Style for table header */
-  .table th {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  /* Style for table data */
-  .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  /* Style for action buttons */
-  .btn {
-    padding: 5px 10px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  /* Style for alternate row background color */
-  .tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
+  margin-bottom: 20px;
+}
+
+/* Style for form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Style for form inputs */
+input[type="text"],
+input[type="date"],
+button {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+input[type="text"],
+input[type="date"] {
+  background-color: #f9f9f9;
+}
+
+/* Main color (Orange) */
+button {
+  background-color: #f08000; /* Orange */
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #d76b00; /* Darker orange on hover */
+}
+
+/* Table color (Blue) */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #3f51b5; /* Blue */
+  color: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Action buttons (Complementary color - Teal) */
+.btn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #428bca; /* Teal */
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #357ebd; /* Darker teal on hover */
+}
+
+/* Alternate row background color (Lighter version of main color) */
+.tr:nth-child(even) {
+  background-color: #fef1e6; /* Lighter orange */
+}
+
+  /* Existing styles for .btn (if any) */
+.btn {
+  /* ... your existing styles here ... */
+}
+
+/* Style the edit button (green) */
+.edit-button {
+  background-color: green;
+  color: white; /* Ensure good contrast */
+}
+
+/* Style the delete button (red) */
+.delete-button {
+  background-color: red;
+  color: white; /* Ensure good contrast */
+}
+.customer-form{
+  margin-top: 3%;
+}

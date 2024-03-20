@@ -1,0 +1,119 @@
+/* Background style */
+body {
+  background-color: #f2f2f2; /* Light gray background */
+}
+
+.inventory-management {
+  padding: 50px;
+  background-color: #fff; /* White background for content area */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.inventory-management h2 {
+  font-size: 2.5em;
+  color: #333; /* Dark gray heading */
+  margin-bottom: 20px;
+}
+
+.inventory-management p {
+  color: #666; /* Lighter gray for text */
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Feature section with a light blue background */
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  background-color: #e0e9ff; /* Light blue background */
+  padding: 20px;
+  border-radius: 10px; /* Subtle rounded corners */
+}
+
+.feature {
+  width: 45%;
+  background-color: #fff; /* White background for feature boxes */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Slight shadow for features */
+}
+
+.feature h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.benefits li {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* Align icons and text vertically */
+}
+
+.benefits li i {
+  margin-right: 10px; /* Space between icon and text */
+  color: #4CAF50; /* Green color for icons */
+}
+
+.why-promasidor {
+  margin-top: 40px; /* Add space after features */
+}
+
+.why-promasidor h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.why-promasidor ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-promasidor li {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.cta {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  text-align: center; /* Center the content */
+}
+
+.cta a {
+  text-decoration: none; /* Remove underline from link */
+}
+
+.button {
+  display: inline-block;
+  background-color: #4CAF50; /* Green button color */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

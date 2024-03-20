@@ -25,6 +25,7 @@
     </form> -->
     <form #supplierinformationregistration="ngForm" (ngSubmit)="createSuppliersInformation(supplierinformationregistration)">
   <div>
+    <div class="supplierinfo-form"></div>
     <input type="hidden" ngModel="{{supplierinformation.SupplierID}}" name="SupplierID"><br>
     <label>SupplierName</label>
     <input type="text" ngModel="{{supplierinformation.SupplierName}}" name="SupplierName"><br>
@@ -57,10 +58,10 @@
       <td>{{SuppliersInformation.SupplierName}}</td>
       <td>{{SuppliersInformation.ProductID}}</td>
       <td>{{SuppliersInformation.Quantity}}</td>
-      <td>{{SuppliersInformation.DateOfDelivery}}</td>
+      <td>{{SuppliersInformation.DateOfReceival}}</td>
       <td>{{SuppliersInformation.AmountPaid}}</td>
       <td>{{SuppliersInformation.EmployeeID}}</td>
-      <td><button class="btn" (click)="editSupplierInformation(SuppliersInformation)">Edit</button><button class="btn" (click)="deleteSuppliersInformation(SuppliersInformation)">Delete</button></td>
+      <td><button class="btn edit-button" (click)="editSupplierInformation(SuppliersInformation)">Edit</button><button class="btn delete-button" (click)="deleteSuppliersInformation(SuppliersInformation)">Delete</button></td>
     </tr>
     <tr class="tr"></tr>
   </table>

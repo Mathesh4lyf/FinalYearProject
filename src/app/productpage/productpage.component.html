@@ -1,11 +1,17 @@
-<p>productpage works!</p>
+
 <form #productregistration="ngForm" (ngSubmit)="createProduct(productregistration)">
-  <div>
+  <div class="product-form">
     <input type="hidden" ngModel="{{product.ProductID}}" name="ProductID"><br>
     <label>ProductName</label>
     <input type="text" ngModel="{{product.ProductName}}" name="ProductName"><br>
     <label>ProductType</label>
-    <input type="text" ngModel="{{product.ProductType}}" name="ProductType"><br>
+    <!-- <input type="text" ngModel="{{product.ProductType}}" name="ProductType"><br> -->
+    <select name="ProductType" ngModel="{{product.ProductType}}" >
+      <!-- <option value="">Select One</option> -->
+    <option value="perishable">Perishable</option>
+    <option value="non-perishable">Non Perishable</option>
+    <option value="non edible">Non Edible</option>
+    </select>
     <label>ProductDescription</label><br>
     <input type="text" ngModel="{{product.ProductDescription}}" name="ProductDescription"><br>
     <button type="submit">{{buttonmessage}}
@@ -28,7 +34,9 @@
         <td>{{Product.ProductType}}</td>
         <td>{{Product.ProductDescription}}</td>
 
-        <td><button class="btn" (click)="editProduct(Product)">Edit</button><button class="btn" (click)="deleteProduct(Product)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editProduct(Product)">Edit</button>
+          <!-- <button class="btn delete-button" (click)="deleteProduct(Product)">Delete</button> -->
+        </td>
       </tr>
       <tr class="tr"></tr>
     </table>

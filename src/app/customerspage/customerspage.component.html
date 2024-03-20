@@ -1,6 +1,7 @@
-<p>customerspage works!</p>
+
 <form #customerregistration="ngForm" (ngSubmit)="createCustomer(customerregistration)">
   <div>
+    <div class="customer-form"></div>
     <input type="hidden" ngModel="{{customers.CustomerID}}" name="CustomerID"><br>
     <label>CustomerName</label>
     <input type="text" ngModel="{{customers.CustomerName}}" name="CustomerName"><br>
@@ -31,7 +32,9 @@
         <td>{{customerspage.PhoneNumber}}</td>
         <td>{{customerspage.EmailAddress}}</td>
         <td>{{customerspage.Location}}</td> 
-        <td><button class="btn" (click)="editcustomers(customerspage)">Edit</button><button class="btn" (click)="deletecustomers(customers)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editcustomers(customerspage)">Edit</button>
+          <!-- <button class="btn delete-button" (click)="deletecustomers(customers)">Delete</button> -->
+        </td>
       </tr>
       <tr class="tr"></tr>
     </table>

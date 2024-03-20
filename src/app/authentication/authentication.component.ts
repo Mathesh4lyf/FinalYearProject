@@ -5,6 +5,7 @@ import { createAuthenticationResponse } from './createAuthenticationResponse';
 import { CustomersService } from '../customers.service';
 import { AuthenticationResponse } from './authenticationresponse';
 import { Router } from '@angular/router';
+import { createEmployeeResponse } from '../employees-page/createEmployeeResponse';
 
 @Component({
   selector: 'app-root',
@@ -31,12 +32,12 @@ export class AuthenticationComponent {
 
   registerFormData:{
     username: string;
-    email: string;
+    // email: string;
     password: string;
     confirmPassword: string;
   } = {
     username: "",
-    email: "",
+    // email: "",
     password: "",
     confirmPassword: ""
   };
@@ -77,8 +78,22 @@ export class AuthenticationComponent {
       });
   }
 
-  onRegisterFormSubmit(): void {
+  // onRegisterFormSubmit(employee:NgForm): void {
+  //   console.log("form data ==> ",this.registerFormData)
+  //   // Handle register form submission logic
+  //   this.backendservice.createEmployees(employee.value).subscribe(
+  //     (response:createEmployeeResponse)=>{ 
+  //       console.log("EmployeesResponse",response)
+  //       alert(response.RESPONSEMESSAGE)
+  //     });
+  // }
+  onRegisterFormSubmit(login:NgForm): void {
     console.log("form data ==> ",this.registerFormData)
     // Handle register form submission logic
+    this.backendservice.createlogin(login.value).subscribe(
+      (response:createAuthenticationResponse)=>{ 
+        console.log("LoginResponse",response)
+        alert(response.RESPONSEMESSAGE)
+      });
+    }
   }
-}

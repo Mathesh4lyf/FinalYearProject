@@ -1,81 +1,120 @@
-*{
-    margin: 0;
-    padding: 0;
+/* Style for form */
+form {
+  margin-bottom: 20px;
 }
 
-#navbar{
-    display:flex;
-    background-color: rgba(0, 0, 255, 0.301);
-     align-items: center;
-     position:relative;
-     height: 80px;
-}
-#navbar ul{
-    display: flex;
+/* Style for form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
 }
 
-#navbar ul li{
-    list-style: none;
-    font-size: 1.3rem;
+/* Style for form inputs */
+input[type="text"],
+input[type="date"],
+button {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
 }
-#navbar ul li a{
-    display: block;
-    color: rgb(0, 0, 0);
-    padding: 3px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-}
-#navbar ul li a:hover{
-    color: rgb(252, 0, 0);
-    background-color:white;
-    border-radius: 27px;
-}
-.hell{
-    background:url(src/assets/black-african-worker-working-in-industry-factory-products-checking-inventory-stock-in-the-warehouse-2G74D6C.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 87.8vh;
-    width: 100vw;
 
+input[type="text"],
+input[type="date"] {
+  background-color: #f9f9f9;
 }
-.box{
-    width: 400px;
-    height: 428px;
-    transform: translate(128%, 35%);
-    box-sizing: border-box;
-    padding: 72px 27px;
 
-} 
-.d-flex input[type="search"]{
-    border: none;
-    border-bottom: 3px solid red;
-    background: #080707;
-    outline: none;
-    height: 36px;
-    color: #db0e0e;
-    font-size: 16px;
-    width: 288px;
+/* Main color (Orange) */
+button {
+  background-color: #f08000; /* Orange */
+  color: white;
+  border: none;
 }
-.d-flex button[type="submit"]{
-    border: none; 
-    outline: none;
-    height: 38px;
-    width: 60px;
-    background: rgb(252, 0, 0);
-    color: white;
-    font: 40px;
-    margin: -3px;
+
+button:hover {
+  background-color: #d76b00; /* Darker orange on hover */
 }
-.d-flex button:hover{
-cursor:pointer;
-background: purple;
-color: yellow;
-font-weight: bold;
+
+/* Table color (Blue) */
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
-.text{
-    text-align: center;
-    font-size: xx-large;
-    color: #d50505;
-    text-decoration: underline;
-    transform: translate(17px, 82px);
+
+.table th {
+  background-color: #3f51b5; /* Blue */
+  color: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Action buttons (Complementary color - Teal) */
+.btn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #428bca; /* Teal */
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #357ebd; /* Darker teal on hover */
+}
+
+/* Alternate row background color (Lighter version of main color) */
+.tr:nth-child(even) {
+  background-color: #fef1e6; /* Lighter orange */
+}
+
+.hell {
+  background: url("src/assets/black-african-worker-working-in-industry-factory-products-checking-inventory-stock-in-the-warehouse-2G74D6C.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200.8vh; /* Adjust height as needed */
+  width: 100vw;
+  position: relative; /* Needed for proper box positioning */
+}
+
+.box {
+  /* Existing styles for your boxes */
+  position: absolute; /* Allows boxes to be positioned on top of background */
+  padding: 20px; /* Add padding for content within boxes */
+  margin: 10px;  /* Add margin for spacing between boxes */
+  color: white; /* Ensure text is visible against dark background */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background for boxes */
+  border-radius: 5px; /* Add rounded corners for boxes (optional) */
+  z-index: 1; /* Ensures boxes appear above the background image */
+}
+
+  /* Style for alternate row background color */
+  .tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  /* Existing styles for .btn (if any) */
+.btn {
+  /* ... your existing styles here ... */
+}
+
+/* Style the edit button (green) */
+.edit-button {
+  background-color: green;
+  color: white; /* Ensure good contrast */
+}
+
+/* Style the delete button (red) */
+.delete-button {
+  background-color: red;
+  color: white; /* Ensure good contrast */
+}
+.status-form{
+  margin-top: 3%;
 }

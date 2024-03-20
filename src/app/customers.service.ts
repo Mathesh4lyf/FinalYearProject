@@ -84,7 +84,7 @@ export class CustomersService {
 
   //stock//
   public getstock(): Observable<any> {
-    return this.http.get<any>(`${this.apiServerUrl}/Stock/STARTGET/1`)
+    return this.http.get<any>(`${this.apiServerUrl}/Stock/GET`)
   }
   public createstock(data:StockpageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Stock/POST`,data)
@@ -157,6 +157,9 @@ export class CustomersService {
 
   public createlogin(data:AuthenticationComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Login/POST`,data)
+  }
+  public createregister(data:AuthenticationComponent): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/Registration/POST`,data)
   }
   /*login
   public createAuth(data:Auth): Observable<any> {

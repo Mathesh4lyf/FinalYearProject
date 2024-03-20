@@ -1,9 +1,18 @@
-<p>order-informationpage works!</p>
+
 <form #orderinformationregistration="ngForm" (ngSubmit)="createOrderInformation(orderinformationregistration)">
   <div>
+    <div class="orderinfo-form"></div>
     <input type="hidden" ngModel="{{orderinformation.OrderID}}" name="OrderID"><br>
     <label>EmployeeName</label>
-    <input type="text" ngModel="{{orderinformation.EmployeeName}}" name="EmployeeName"><br>
+    <!-- <input type="text" ngModel="{{orderinformation.EmployeeName}}" name="EmployeeName"><br> -->
+    <select name="EmployeeName" ngModel="{{orderinformation.EmployeeName}}" >
+      <!-- <option value="">Select One</option> -->
+      <option value="Billy Griffin">Billy Griffin</option>
+      <option value="Billy Jean">Billy Jean</option>
+      <option value="Zoey Owin">Zoey Owin</option>
+      <option value="Lionel Cristiano">Lionel Cristiano</option>
+      <option value="Musa Abdal">Musa Abdal</option>
+    </select>
     <label>CustomerName</label>
     <input type="text" ngModel="{{orderinformation.CustomerName}}" name="CustomerName"><br>
     <label>ProductName</label>
@@ -17,7 +26,14 @@
     <label *ngIf="!isUpdate">DateOfOrder</label>
     <input type="date" *ngIf="!isUpdate"ngModel="{{orderinformation.DateOfOrder}}" name="DateOfOrder"><br>
     <label>Status</label>
-    <input type="text" ngModel="{{orderinformation.Status}}" name="Status"><br>
+    <!-- <input type="text" ngModel="{{orderinformation.Status}}" name="Status"><br> -->
+    <select name="EmployeeName" ngModel="{{orderinformation.EmployeeName}}" >
+      <option value="booked">Booked</option>
+      <option value="packed">Packed</option>
+      <option value="dispatched">Dispatched</option>
+      <option value="delivered">Delivered</option>
+      <option value="not-delivered">Not delivered</option>
+    </select>
     <button type="submit">{{buttonmessage}}
     </button>
   </div>
@@ -49,7 +65,7 @@
         <td>{{OrderInformationpage.DateOfOrder}}</td>
         <td>{{OrderInformationpage.Status}}</td>
 
-        <td><button class="btn" (click)="editOrderInformation(OrderInformationpage)">Edit</button><button class="btn" (click)="deleteOrderInformation(OrderInformationpage)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editOrderInformation(OrderInformationpage)">Edit</button><button class="btn delete-button" (click)="deleteOrderInformation(OrderInformationpage)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

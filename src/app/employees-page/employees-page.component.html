@@ -1,6 +1,7 @@
-<p>employees-page works!</p>
+
 <form #employeeregistration="ngForm" (ngSubmit)="createEmployee(employeeregistration)">
   <div>
+    <div class="employees-form"></div>
     <input type="hidden" ngModel="{{employees.EmployeeID}}" name="EmployeeID"><br>
     <label>FirstName</label>
     <input type="text" ngModel="{{employees.FirstName}}" name="FirstName"><br>
@@ -13,11 +14,17 @@
     <label>EmailAddress</label>
     <input type="text" ngModel="{{employees.EmailAddress}}" name="EmailAddress"><br>
     <label>UserName</label>
-    <input type="text" ngModel="{{employees.UserName}}" name="UserName"><br>
-    <label>Password</label>
-    <input type="text" ngModel="{{employees.Password}}" name="Password"><br>
+    <input type="text" ngModel="{{employees.Username}}" name="UserName"><br>
+    <!-- <label>Password</label>
+    <input type="text" ngModel="{{employees.Password}}" name="Password"><br> -->
     <label>Role</label>
-    <input type="text" ngModel="{{employees.Role}}" name="Role"><br>
+    <!-- <input type="text" ngModel="{{employees.Role}}" name="Role"><br> -->
+    <select name="Role" ngModel="{{employees.Role}}" >
+      <!-- <option value="">Select One</option> -->
+      <option value="agent">Agent</option>
+      <option value="store-clerk">Store Clerk</option>
+      <option value="driver">Driver</option>
+    </select>
     <button type="submit">{{buttonmessage}}
     </button>
   </div>
@@ -31,7 +38,7 @@
         <th>Phone Number</th>
         <th>Email Address</th>
         <th>UserName</th>
-        <th>Password</th>
+        <!-- <th>Password</th> -->
         <th>Role</th>
         <th>Employee ID</th>
         <th colspan="2">Action</th>
@@ -43,12 +50,16 @@
         <td>{{Employees.DateofBirth}}</td>
         <td>{{Employees.PhoneNumber}}</td>
         <td>{{Employees.EmailAddress}}</td>
-        <td>{{Employees.UserName}}</td>
-        <td>{{Employees.Password}}</td>
+        <td>{{Employees.Username}}</td>
+        <!-- <td>{{Employees.Password}}</td> -->
         <td>{{Employees.Role}}</td>
         <td>{{Employees.EmployeeID}}</td>
 
-        <td><button class="btn" (click)="editEmployee(Employees)">Edit</button><button class="btn" (click)="deleteEmployee(Employees)">Delete</button></td>
+        <td>
+          <button class="btn edit-button" (click)="editEmployee(Employees)">Edit</button>
+          <!-- <button class="btn delete-button" (click)="deleteEmployee(Employees)">Delete</button> -->
+        </td>
+        
       </tr>
       <tr class="tr"></tr>
     </table>

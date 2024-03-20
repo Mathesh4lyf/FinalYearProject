@@ -1,6 +1,7 @@
-<p>test works!</p>
+
 <form #supplierregistration="ngForm" (ngSubmit)="createSuppliers(supplierregistration)">
   <div>
+    <div class="supplier-form"></div>
     <input type="hidden" ngModel="{{suppliers.SupplierID}}" name="SupplierID"><br>
     <label>SupplierName</label>
     <input type="text" ngModel="{{suppliers.SupplierName}}" name="SupplierName"><br>
@@ -31,7 +32,9 @@
         <td>{{Suppliers.PhoneNumber}}</td>
         <td>{{Suppliers.EmailAddress}}</td>
         <td>{{Suppliers.Location}}</td>
-        <td><button class="btn" (click)="editSuppliers(Suppliers)">Edit</button><button class="btn" (click)="deleteSuppliers(Suppliers)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editSuppliers(Suppliers)">Edit</button>
+          <!-- <button class="btn delete-button" (click)="deleteSuppliers(Suppliers)">Delete</button> -->
+        </td>
       </tr>
       <tr class="tr"></tr>
     </table>

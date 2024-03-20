@@ -4,7 +4,7 @@ export class Employees{
     DateofBirth!: Date;
     PhoneNumber!: string;
     EmailAddress!: string;
-    UserName!: string;
+    Username!: string;
     Password!: string;
     Role!: string;
     EmployeeID!: BigInteger;

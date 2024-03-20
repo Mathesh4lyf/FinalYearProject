@@ -1,6 +1,7 @@
-<p>stockpage works!</p>
+
 <form #stockregistration="ngForm" (ngSubmit)="createstock(stockregistration)">
   <div>
+    <div class="stock-form"></div>
     <input type="hidden" ngModel="{{stock.ProductID}}" name="ProductID"><br>
     <label>ProductID</label>
     <input type="text" ngModel="{{stock.ProductID}}" name="ProductID"><br>
@@ -29,7 +30,7 @@
         <td>{{Stock.ProductName}}</td>
         <td>{{Stock.QuantityAvailable}}</td>
         <td>{{Stock.ProductType}}</td>
-        <td><button class="btn" (click)="editStock(Stock)">Edit</button><button class="btn" (click)="deleteStock(Stock)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editStock(Stock)">Edit</button><button class="btn delete-button" (click)="deleteStock(Stock)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

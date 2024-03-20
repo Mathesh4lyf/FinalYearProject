@@ -17,15 +17,49 @@
     border-color: white;
     text-emphasis-color: blue;
 }
-/*.navigation {
-    background-color: aliceblue;
-    display: inline;
-    float: left;
-    margin: 0%;
-    height: 50px;
-    width: 60px;
-    align-items: center;
+/* Navigation Bar Styles */
+.navigation-bar {
+    list-style: none; /* Removes default bullet points */
+    margin: 0;
     padding: 0;
-    display: block;
-    border: 1px solid #000000;
-}*/
+    position: fixed; /* Make it stick, even on scroll */
+    top: 0;
+    width: 100%;
+    background-color: #f5f5f5; /* Light background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Allow horizontal layout for navigation items */
+    justify-content: space-between; /* Space navigation items evenly */
+    padding: 1em; /* Add some padding for better content spacing */
+  }
+  
+  .navigation {
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline on hover */
+    transition: 0.3s; /* Smooth transitions for hover effects */
+    padding: 0.5em 1em; /* Padding for navigation items */
+    font-weight: bold; /* Makes navigation text more prominent */
+  }
+  
+  .navigation:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+    color: #2196f3; /* Text color on hover (Promasidor blue) */
+  }
+  
+  /* Navigation Item with Specific Style (Based on Your Request) */
+  .navigation.special-nav {
+    background-color: aliceblue; /* Lighter background */
+    display: inline; /* Inline display for a more compact look */
+    float: left; /* Left alignment */
+    margin: 0%; /* No margin */
+    height: 50px; /* Fixed height */
+    width: 60px; /* Fixed width */
+    align-items: center; /* Center content vertically */
+    padding: 0; /* No padding */
+    border: 1px solid #000000; /* Black border */
+  }
+  
+  .navigation.special-nav:hover { /* Optional: Modify hover effects for this specific item */
+    background-color: #e0e0e0; /* Lighter background on hover */
+    border-color: #808080; /* Darker border on hover */
+  }
+  

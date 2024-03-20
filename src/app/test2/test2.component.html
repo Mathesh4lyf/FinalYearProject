@@ -1,7 +1,6 @@
-<p>test2 works!</p>
-<p>statuspage works!</p>
 <form #statusregistration="ngForm" (ngSubmit)="createstatus(statusregistration)">
-  <div>
+  <div class="main-container"> <form #stockregistration="ngForm" (ngSubmit)="createstatus(statusregistration)" class="form form-container"> <div>
+    <div class="status-form"></div>
     <input type="hidden" ngModel="{{status.StatusID}}" name="StatusID"><br>
     <label>StatusName</label>
     <input type="text" ngModel="{{status.StatusName}}" name="StatusName"><br>
@@ -10,6 +9,7 @@
   </div>
 </form>
 <div class="hell">
+  <div class="table-container"> <table class="table"></table>
     <table class="table">
       <tr class="tr">
         <th>Status ID</th>
@@ -21,7 +21,7 @@
         <td>{{Status.StatusID}}</td>
         <td>{{Status.StatusName}}</td>
 
-        <td><button class="btn" (click)="editStatus(Status)">Edit</button><button class="btn" (click)="deleteStatus(Status)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editStatus(Status)">Edit</button><button class="btn delete-button" (click)="deleteStatus(Status)">Delete</button></td>
       </tr>
       <tr class="tr"></tr>
     </table>

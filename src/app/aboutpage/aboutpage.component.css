@@ -1,64 +1,70 @@
-.body{
-    background-color: black;
-    color: aliceblue;
-}
-.navbar{
-    background-color: black;
-    color: aliceblue;
-    font-size: medium;
-    width: 100%;
-    list-style-type: none;
-    font-style: italic;
-    text-align: center;
-
-}
-.p{
-    color: blue;
-    font-style: italic;
-    text-align: right;
-}
-.a{
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    text-align: right;
-    text-align: center;
-
-}
-
-
-.first-row {
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f8fa; /* Light gray background */
+    color: #333; /* Dark gray text color */
+  }
+  
+  .header {
+    background-color: #3f51b5; /* Blue header background */
+    color: white; /* White text color for header */
+    padding: 10px 20px;
+  }
+  
+  .navbar {
     display: flex;
-    width: 66%;
-    justify-content: space-around;
-}
-
-.input-button {
-    display: flex;
-    width: 45%;
-}
-
-.mat-raised-button {
-    background-color: #FFC200;
-    color: black;
-}
-
-.input {
-    width: 100%;
-}
-
-.button {
-    margin-left: 10px;
-    padding-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-.collect{
-    width: 90%;
-    height:  90%;
-    background-color: #FFC200;
+    justify-content: space-between; /* Center logo, adjust if needed */
+    align-items: center; /* Align logo vertically */
+  }
+  
+  .logo img {
+    height: 50px; /* Adjust logo image height as needed */
+  }
+  
+  .about-content {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-title {
     text-align: center;
-    display: inline-block;
-    border-radius: 25px;
-    margin-left: auto;
-    margin-right: auto;
-}
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+  
+  .mission-vision, .core-values {
+    margin-bottom: 30px;
+  }
+  
+  .core-values ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .core-values li {
+    margin-bottom: 10px;
+    line-height: 1.5; /* Improve readability */
+  }
+  
+  .core-values li:before {
+    content: "\f0da"; /* Font Awesome icon for checkmark (replace with your preferred icon font) */
+    font-family: FontAwesome; /* Replace with your icon font family */
+    margin-right: 10px;
+    color: #3f51b5; /* Blue color for icon */
+  }
+  
+  .footer {
+    background-color: #f0f9ff; /* Lighter gray background for footer */
+    padding: 10px 20px;
+    text-align: center;
+    color: #666; /* Light gray text color for footer */
+  }
+  

@@ -61,10 +61,10 @@ deleteStock(stock:Stock):void {
     this.backendservice.getstock().subscribe(
       (response:StockResponse)=>{
         console.log("StockResponse",response)
-        this.stock=response.DATA;
-        this.stocklist?.push(this.stock)
-        // this.stocklist=response.DATA;
-        console.log("In message",this.stock)
+        // this.stock=response.DATA;
+        // this.stocklist?.push(this.stock)
+        this.stocklist=response.DATA;
+        console.log("In message",this.stocklist)
       },(error:HttpErrorResponse)=>{
         console.log("Error Message",error)
       }
