@@ -6,7 +6,7 @@
     <label>EmployeeName</label>
     <!-- <input type="text" ngModel="{{orderinformation.EmployeeName}}" name="EmployeeName"><br> -->
     <select name="EmployeeName" ngModel="{{orderinformation.EmployeeName}}" >
-      <!-- <option value="">Select One</option> -->
+      <option value="">Select One</option>
       <option value="Billy Griffin">Billy Griffin</option>
       <option value="Billy Jean">Billy Jean</option>
       <option value="Zoey Owin">Zoey Owin</option>
@@ -27,7 +27,8 @@
     <input type="date" *ngIf="!isUpdate"ngModel="{{orderinformation.DateOfOrder}}" name="DateOfOrder"><br>
     <label>Status</label>
     <!-- <input type="text" ngModel="{{orderinformation.Status}}" name="Status"><br> -->
-    <select name="EmployeeName" ngModel="{{orderinformation.EmployeeName}}" >
+    <select name="Status" ngModel="{{orderinformation.EmployeeName}}" >
+      <option value="capture">Capture</option>
       <option value="booked">Booked</option>
       <option value="packed">Packed</option>
       <option value="dispatched">Dispatched</option>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { NgForm } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { createAuthenticationResponse } from './createAuthenticationResponse';
 import { CustomersService } from '../customers.service';
@@ -13,14 +12,11 @@ import { createEmployeeResponse } from '../employees-page/createEmployeeResponse
   styleUrls: ['./authentication.component.css']
 })
 
-
-
 export class AuthenticationComponent {
   currentForm: 'login' | 'register' = 'login';
   public isUpdate=false;
   public authentication!: AuthenticationComponent;
   public authenticationresponse!: createAuthenticationResponse;
-  // constructor(private backendservice:CustomersService) { }
 
   loginFormData:{
     username: string;
@@ -32,18 +28,15 @@ export class AuthenticationComponent {
 
   registerFormData:{
     username: string;
-    // email: string;
     password: string;
     confirmPassword: string;
   } = {
     username: "",
-    // email: "",
     password: "",
     confirmPassword: ""
   };
   username!: string
   authmessage!: string
-  // backendservice: any;
 
   constructor(private backendservice:CustomersService, private router: Router) {
     this.loginFormData = {
@@ -61,10 +54,7 @@ export class AuthenticationComponent {
     // Handle login form submission logic
   }
   createlogin(login:NgForm):void { 
-    // console.log("form data",login.value)
-    // console.log("username",login.form.controls['username'].value)
     this.username=login.form.controls['username'].value
-    // this.loginFormData=(loginFormData)login
     this.backendservice.createlogin(login.value).subscribe(
       (response:AuthenticationResponse)=>{ 
         console.log("LoginResponse",response)
@@ -72,28 +62,32 @@ export class AuthenticationComponent {
         if (response.result===true) {
           console.log("Billy")
           sessionStorage.setItem('user',this.username)
-            sessionStorage.setItem('auth','Yes')
-            this.router.navigate(['admin'])
+          sessionStorage.setItem('auth','Yes')
+          this.router.navigate(['admin'])
         }
       });
   }
 
-  // onRegisterFormSubmit(employee:NgForm): void {
-  //   console.log("form data ==> ",this.registerFormData)
-  //   // Handle register form submission logic
-  //   this.backendservice.createEmployees(employee.value).subscribe(
-  //     (response:createEmployeeResponse)=>{ 
-  //       console.log("EmployeesResponse",response)
-  //       alert(response.RESPONSEMESSAGE)
-  //     });
-  // }
-  onRegisterFormSubmit(login:NgForm): void {
-    console.log("form data ==> ",this.registerFormData)
-    // Handle register form submission logic
-    this.backendservice.createlogin(login.value).subscribe(
-      (response:createAuthenticationResponse)=>{ 
-        console.log("LoginResponse",response)
-        alert(response.RESPONSEMESSAGE)
-      });
+  onRegisterFormSubmit(registerForm:NgForm): void {
+    if (this.registerFormData.password !== this.registerFormData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
     }
+    this.backendservice.createregister(registerForm.value).subscribe(
+      (response:createAuthenticationResponse)=>{ 
+        console.log("RegistrationResponse",response)
+        alert(response.RESPONSEMESSAGE)
+        if (response.result===true) {
+          console.log("Registration successful")
+          sessionStorage.setItem('user',this.username)
+          sessionStorage.setItem('auth','Yes')
+          this.router.navigate(['admin'])
+        }
+      },
+      (error) => {
+        console.error("Error in registration", error);
+        alert("Error in registration");
+      }
+    );
   }
+}
