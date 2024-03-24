@@ -14,6 +14,8 @@
     </select>
     <label>ProductDescription</label><br>
     <input type="text" ngModel="{{product.ProductDescription}}" name="ProductDescription"><br>
+    <label>ProductCost</label>
+    <input type="text" ngModel="{{product.ProductCost}}" name="ProductCost"><br>
     <button type="submit">{{buttonmessage}}
     </button>
   </div>
@@ -25,6 +27,7 @@
         <th>Product Name</th>
         <th>Product Type</th>
         <th>Product Description</th>
+        <th>Product Cost</th>
         <th colspan="2">Action</th>
       </tr>
       <tr class="tr" *ngFor="let Product of productlist">
@@ -33,6 +36,7 @@
         <td>{{Product.ProductName}}</td>
         <td>{{Product.ProductType}}</td>
         <td>{{Product.ProductDescription}}</td>
+        <td>{{Product.ProductCost}}</td>
 
         <td><button class="btn edit-button" (click)="editProduct(Product)">Edit</button>
           <!-- <button class="btn delete-button" (click)="deleteProduct(Product)">Delete</button> -->

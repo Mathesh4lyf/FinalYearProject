@@ -1,0 +1,50 @@
+<form #getorders="ngForm" (ngSubmit)="createreport(getorders)">
+    <div class="report-form"></div>
+    <div>
+      <!-- <label>OrderID</label>
+      <input type="text" ngModel="{{getorders.OrderID}}" name="OrderID"><br> -->
+      <label>CustomerName</label>
+      <input type="text" ngModel name ="CustomerName"><br>
+      <!-- <label>ProductName</label>
+      <input type="text" ngModel="{{getorders.ProductType}}" name="ProductType"><br>
+      <label>Quantity</label>
+      <input type="text" ngModel="{{getorders.QuantityAvailable}}" name="QuantityAvailable"><br>
+      <label>AmountToBePaid</label>
+      <input type="text" ngModel="{{getorders.ProductType}}" name="ProductType"><br>
+      <label>AmountPaid</label>
+      <input type="text" ngModel="{{getorders.ProductType}}" name="ProductType"><br> -->
+      <label>DateOfOrder</label>
+      <input type="text"ngModel name="DateOfOrder"><br>
+      <!-- <label>Status</label>
+      <input type="text" ngModel="{{getorders.ProductType}}" name="ProductType"><br> -->
+      <button type="submit">{{buttonmessage}}
+      </button>
+    </div>
+  </form>
+  <div>
+    <div class="stock-form"></div>
+      <table class="table">
+        <tr class="tr">
+          <th>OrderID</th>
+          <th>CustomerName</th>
+          <th>ProductName </th>
+          <th>Quantity</th>
+          <th>AmountToBePaid</th>
+          <th>AmountPaid</th>
+          <th>DateOfOrder</th>
+          <th>Status</th>
+          <th colspan="2">Action</th>
+        </tr>
+        <tr class="tr" *ngFor="let getorders of reportlist">
+            <td>{{getorders.OrderID}}</td>
+            <td>{{getorders.CustomerName}}</td>
+            <td>{{getorders.ProductName}}</td>
+            <td>{{getorders.Quantity}}</td>
+            <td>{{getorders.AmountToBePaid}}</td>
+            <td>{{getorders.AmountPaid}}</td>
+            <td>{{getorders.DateOfOrder}}</td>
+            <td>{{getorders.Status}}</td>
+            </tr>
+            <tr class="tr"></tr>
+          </table>
+        </div>

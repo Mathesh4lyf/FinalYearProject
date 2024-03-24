@@ -14,11 +14,13 @@ import { SupplierResponse } from './supplierspage/supplierresponse';
 // import { DeliveryInformationResponse } from './delivery-informationpage/DeliveryInformationResponse ';
 import { NgForm } from '@angular/forms';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { GetOrdersReportComponent } from './get-orders-report/get-orders-report.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomersService {
+  
   private apiServerUrl = 'https://localhost:44367';  //backend api call.
   private apiTest = 'https://bb72dd24-0e5e-4a69-8101-aa850e43e0af.mock.pstmn.io';
 
@@ -71,6 +73,9 @@ export class CustomersService {
    //Product//
    public getProduct(): Observable<any> {
     return this.http.get<any>(`${this.apiServerUrl}/Products/GET`)
+  }
+  public getProductbyid(product: String) :Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/Products/STARTGET/`+product)
   }
   public createProduct(data:ProductpageComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Products/POST`,data)
@@ -161,6 +166,10 @@ export class CustomersService {
   public createregister(data:AuthenticationComponent): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Registration/POST`,data)
   }
+  public createreport(data:GetOrdersReportComponent): Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/GetOrdersByDate/POST`,data)
+  }
+ 
   /*login
   public createAuth(data:Auth): Observable<any> {
     return this.http.post<any>(`${this.apiServerUrl}/Login`,data)

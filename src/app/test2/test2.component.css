@@ -75,14 +75,14 @@ button:hover {
   background-color: #fef1e6; /* Lighter orange */
 }
 
-.hell {
+/* .hell {
   background: url("src/assets/black-african-worker-working-in-industry-factory-products-checking-inventory-stock-in-the-warehouse-2G74D6C.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200.8vh; /* Adjust height as needed */
-  width: 100vw;
-  position: relative; /* Needed for proper box positioning */
-}
+  /* width: 100vw; */
+  /* position: relative; Needed for proper box positioning
+} */ */
 
 .box {
   /* Existing styles for your boxes */

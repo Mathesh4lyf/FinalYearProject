@@ -1,5 +1,5 @@
 
-<form #stockregistration="ngForm" (ngSubmit)="createstock(stockregistration)">
+<form *ngIf="isUpdate" #stockregistration="ngForm" (ngSubmit)="createstock(stockregistration)">
   <div>
     <div class="stock-form"></div>
     <input type="hidden" ngModel="{{stock.ProductID}}" name="ProductID"><br>
@@ -16,6 +16,7 @@
   </div>
 </form>
 <div>
+  <div class="stock-form"></div>
     <table class="table">
       <tr class="tr">
         <th>ProductID</th>
@@ -24,13 +25,15 @@
         <th>Product Type</th>
         <th colspan="2">Action</th>
       </tr>
+      <div class="stock-form"></div>
       <tr class="tr" *ngFor="let Stock of stocklist">
           <!--Rememeber to check with the previous one -->
         <td>{{Stock.ProductID}}</td>
         <td>{{Stock.ProductName}}</td>
         <td>{{Stock.QuantityAvailable}}</td>
         <td>{{Stock.ProductType}}</td>
-        <td><button class="btn edit-button" (click)="editStock(Stock)">Edit</button><button class="btn delete-button" (click)="deleteStock(Stock)">Delete</button></td>
+        <td><button class="btn edit-button" (click)="editStock(Stock)">Edit</button>
+          <!-- <button class="btn delete-button" (click)="deleteStock(Stock)">Delete</button></td> -->
       </tr>
       <tr class="tr"></tr>
     </table>

@@ -5,6 +5,13 @@ import { CustomersService } from '../customers.service';
 import { OrderInformationResponse } from './OrderInformationResponse';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { EmployeesResponse } from '../employees-page/EmployeesResponse';
+import { CustomersResponse } from '../customerspage/customersresponse';
+import { Customers } from '../customerspage/customers';
+import { ProductResponse } from '../productpage/ProductResponse';
+import { Product } from '../productpage/products';
+import { Employees } from '../employees-page/employees-page';
+import { SingleProductResponse } from '../productpage/SingleProductResponse';
 
 
 @Component({
@@ -18,11 +25,23 @@ export class OrderInformationpageComponent implements OnInit {
   public orderinformation: OrderInformation=new OrderInformation();
   public orderinformationresponse!: OrderInformationResponse;
   public orderinformationlist:OrderInformation[] = [];
+  public employeeslist: Employees[] = [];
+  public customerslist: Customers[] = [];
+  public productlist: Product[] = [];
+  public product!:Product;
+  public Balance!:string;
+  public AmountToPaid:string="";
+  // employeeslist: any;
+  // customerslist: any;
+  // productlist: Product=new Product();
   constructor(private backendservice:CustomersService) { }
 
   ngOnInit(): void {
-    console.log("Calling OrderInformation");
+    console.log("Calling ngOnInit");
     this.getOrderInformation();
+    this.getEmployees();
+    this.getCustomers();
+    this.getProduct();  
 
   }
   createOrderInformation(orderinformation:NgForm):void { 
@@ -69,5 +88,76 @@ export class OrderInformationpageComponent implements OnInit {
         console.log("Error Message",error)
       }
     );
+  }
+    public getEmployees():void{
+      this.backendservice.getEmployees().subscribe(
+        (response:EmployeesResponse)=>{ 
+          console.log("EmployeesResponse",response)
+          // this.employees=response.DATA;
+          // this.employeeslist?.push(this.employees)
+          this.employeeslist=response.DATA;
+          console.log("In message",this.employeeslist)
+        },(error:HttpErrorResponse)=>{
+          console.log("Error Message",error)
+        }
+      );
+    }
+    public getCustomers():void{
+      this.backendservice.getcustomers().subscribe(
+        (response:CustomersResponse)=>{
+          console.log("CustomersResponse",response)
+        //  this.customers=response.DATA;
+          // this.customerslist?.push(this.customers)
+          this.customerslist=response.DATA
+          console.log("In message",this.customerslist)
+        },(error:HttpErrorResponse)=>{
+          console.log("Error Message",error)
+        }
+      );
+    }
+      public getProduct():void{
+        this.backendservice.getProduct().subscribe(
+          (response:ProductResponse)=>{
+            console.log("ProductResponse",response)
+            // this.product=response.DATA;
+            // this.productlist?.push(this.product)
+            this.productlist=response.DATA;
+            console.log("In message",this.productlist)
+          },(error:HttpErrorResponse)=>{
+            console.log("Error Message",error)
+          }
+        );
   } 
+  public getinteger(quantity:string):void{
+console.log ("quantity",quantity)
+let sellingprice=this.product.ProductCost;
+let selectedquantity=quantity;
+let result=parseInt(quantity)*parseInt(sellingprice);
+this.orderinformation.AmountToBePaid=result.toString();
+this.AmountToPaid=result.toString();
+console.log("uprice",sellingprice)
+  }
+ public getbalance(amountpaid:string):void{
+  let AmountToBePaid=this.orderinformation.AmountToBePaid;
+  console.log("AmountPaid",amountpaid)
+  console.log("AmountToBePaid",AmountToBePaid)
+  let balanceresult=parseInt(amountpaid)-parseInt(this.AmountToPaid);
+  this.Balance=balanceresult.toString();
+ }
+  public  productn(product:String):void{
+    console.log (product)
+    this.backendservice.getProductbyid(product).subscribe(
+      (response:SingleProductResponse)=>{
+        console.log("ProductResponse",response)
+        // this.product=response.DATA;
+        // this.productlist?.push(this.product)
+        this.product=response.DATA;
+        this.orderinformation.AmountToBePaid=this.product.ProductCost;
+        console.log("In message",this.product)
+      },(error:HttpErrorResponse)=>{
+        console.log("Error Message",error)
+      }
+    );
+      }
+ 
 }

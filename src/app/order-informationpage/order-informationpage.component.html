@@ -7,24 +7,29 @@
     <!-- <input type="text" ngModel="{{orderinformation.EmployeeName}}" name="EmployeeName"><br> -->
     <select name="EmployeeName" ngModel="{{orderinformation.EmployeeName}}" >
       <option value="">Select One</option>
-      <option value="Billy Griffin">Billy Griffin</option>
-      <option value="Billy Jean">Billy Jean</option>
-      <option value="Zoey Owin">Zoey Owin</option>
-      <option value="Lionel Cristiano">Lionel Cristiano</option>
-      <option value="Musa Abdal">Musa Abdal</option>
+      <option *ngFor="let employee of employeeslist" value="employee.FirstName">{{employee.FirstName}} {{employee.LastName}}</option>
     </select>
     <label>CustomerName</label>
-    <input type="text" ngModel="{{orderinformation.CustomerName}}" name="CustomerName"><br>
+    <select ngModel="{{orderinformation.CustomerName}}" name="CustomerName">
+      <option value="">Select One</option>
+      <option *ngFor="let customer of customerslist" value="customer.CustomerName">{{customer.CustomerName}}</option>
+    </select>
     <label>ProductName</label>
-    <input type="text" ngModel="{{orderinformation.ProductName}}" name="ProductName"><br>
+    <select #product ngModel="{{orderinformation.ProductName}}" name="ProductName" (change)="productn(product.value)">
+      <option value="">Select One</option>
+      <option *ngFor="let product of productlist" value="{{product.ProductID}}" >{{product.ProductName}} </option>
+    </select>
     <label>Quantity</label>
-    <input type="text" ngModel="{{orderinformation.Quantity}}" name="Quantity"><br>
+    <input type="number" #Quantity ngModel="{{orderinformation.Quantity}}" name="Quantity" (input)="getinteger(Quantity.value)"><br>
     <label>AmountTobePaid</label>
     <input type="text" ngModel="{{orderinformation.AmountToBePaid}}" name="AmountToBePaid"><br>
     <label>AmountPaid</label>
-    <input type="text" ngModel="{{orderinformation.AmountPaid}}" name="AmountPaid"><br>
+    <input type="text" #AmountPaid ngModel="{{orderinformation.AmountPaid}}" name="AmountPaid"(input)="getbalance(AmountPaid.value)"><br>
+    <label>Balance</label>
+    <input type="text" ngModel="{{Balance}}" name="Balance"><br>
     <label *ngIf="!isUpdate">DateOfOrder</label>
     <input type="date" *ngIf="!isUpdate"ngModel="{{orderinformation.DateOfOrder}}" name="DateOfOrder"><br>
+    <div *ngIf="isUpdate">
     <label>Status</label>
     <!-- <input type="text" ngModel="{{orderinformation.Status}}" name="Status"><br> -->
     <select name="Status" ngModel="{{orderinformation.EmployeeName}}" >
@@ -35,6 +40,7 @@
       <option value="delivered">Delivered</option>
       <option value="not-delivered">Not delivered</option>
     </select>
+  </div>
     <button type="submit">{{buttonmessage}}
     </button>
   </div>

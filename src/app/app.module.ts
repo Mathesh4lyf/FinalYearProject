@@ -22,6 +22,12 @@ import{RouterModule, Routes, CanActivate } from '@angular/router';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
 import { AuthGurdService as AuthGuard} from './authguard.guard';
+import { GetOrdersReportComponent } from './get-orders-report/get-orders-report.component';
+// import { ReportOrderComponent } from './report-order/report-order.component';
+// import { ReportOrdeerComponent } from './report-ordeer/report-ordeer.component';
+// import { LearnMoreComponent } from './learn-more/learn-more.component';
+// import { ContactComponent } from './contact/contact.component';
+// import { TrackingComponent } from './tracking/tracking.component';
 
 const routes: Routes = [{
   path: 'auth',
@@ -101,10 +107,20 @@ children: [
      
     },
     {
+      path: 'report',
+      component: GetOrdersReportComponent
+     
+    },
+    {
       path: '**',
       component: HomepageComponent
     
     },
+    // {
+    //   path: 'contact',
+    //   component: ContactComponent
+    
+    // },
 ]
 },
 {
@@ -148,6 +164,12 @@ children: [
     DashboardComponent,
     TestComponent,
     Test2Component,
+    GetOrdersReportComponent,
+    // ReportOrderComponent,
+    // ReportOrdeerComponent,
+    // LearnMoreComponent,
+    // // ContactComponent,
+    // TrackingComponent,
 
   ],
   imports: [

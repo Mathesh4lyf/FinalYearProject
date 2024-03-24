@@ -4,8 +4,8 @@ export class Employees{
     DateofBirth!: Date;
     PhoneNumber!: string;
     EmailAddress!: string;
-    Username!: string;
-    Password!: string;
+    //Username!: string;
+    // Password!: string;
     Role!: string;
     EmployeeID!: BigInteger;
 }
