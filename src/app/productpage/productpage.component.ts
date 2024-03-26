@@ -74,5 +74,11 @@ export class ProductpageComponent implements OnInit {
         console.log("Error Message",error)
       }
     );
-  } 
-}
+    }
+     public clearForm(form: NgForm): void {
+      form.resetForm(); // Reset the form fields
+      this.product = new Product(); // Reset the product object
+    }
+  }
+  
+

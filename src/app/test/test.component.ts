@@ -71,5 +71,9 @@ export class TestComponent implements OnInit {
         console.log("Error Message",error)
       }
     );
+  }
+  public clearForm(form: NgForm): void {
+   form.resetForm(); 
+   this.suppliers = new Suppliers(); 
   } 
 }

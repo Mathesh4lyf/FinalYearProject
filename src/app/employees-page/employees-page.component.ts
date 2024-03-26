@@ -70,5 +70,9 @@ deleteEmployee(employee:Employees):void {
         console.log("Error Message",error)
       }
     );
+  }
+  public clearForm(form: NgForm): void {
+   form.resetForm(); 
+   this.employees= new Employees(); 
   } 
 }

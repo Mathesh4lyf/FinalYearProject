@@ -69,6 +69,10 @@ export class CustomerspageComponent implements OnInit {
         console.log("Error Message",error)
       }
     );
+  }
+  public clearForm(form: NgForm): void {
+   form.resetForm(); // Reset the form fields
+   this.customers = new Customers(); 
   } 
 
   

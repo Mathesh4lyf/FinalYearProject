@@ -158,6 +158,10 @@ console.log("uprice",sellingprice)
         console.log("Error Message",error)
       }
     );
+  }
+  public clearForm(form: NgForm): void {
+   form.resetForm(); 
+   this.orderinformation = new OrderInformation(); 
       }
  
 }
